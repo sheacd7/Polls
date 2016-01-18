@@ -2,14 +2,38 @@
 # META =========================================================================
 # Title: FormatPollData.sh
 # Usage: FormatPollData.sh
-# Description: Format poll data from csv to arrays.
+# Description: Format poll data from csv and organize by poll id, poll group id.
 # Author: Colin Shea
 # Created: 2016-01-16
+
+# poll_groups
+#   keys - poll group id: md5 hash of poll labels [poll info, poll results]
+#   vals - poll ids
+
+# poll_ids
+#   keys - numeric index (ordered by appearance in csv)
+#   vals - unique poll id
+
+# poll_infos
+#   keys - poll id
+#   vals - info (source, sample size, margin of error, dates administered)
+
+# poll_results
+#   keys - poll id
+#   vals - results for each candidate
+
+# poll_info_labels
+#   keys - poll group id
+#   vals - labels for poll info
+
+# poll_result_labels
+#   keys - poll group id
+#   vals - labels for poll results (list of candidates)
+
 
 # TODO:
 # handle missing date
 #  [126] Hot Air/Townhall/Survey Monkey
-# poll_group: list of poll_ids belonging to the same set of labels
 
 # FIXED:
 # handle multiple [ref_id] per row 
@@ -52,10 +76,10 @@ poll_label_nums[${#poll_label_nums[@]}]=$(( ${#content[@]} + 1 ))
 declare -a poll_ids
 declare -A poll_groups
 # associative because poll_id can include non-numeric characters
-declare -A poll_info_arr
-declare -A poll_result_arr
-declare -A poll_info_label_arr
-declare -A poll_result_label_arr
+declare -A poll_infos
+declare -A poll_results
+declare -A poll_info_labels
+declare -A poll_result_labels
 
 # for each set of labels (namely, list of candidates in poll)
 for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
@@ -69,6 +93,9 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
   pos=$(( ${#x} + 13 ))
   poll_info_label="${poll_labels:0:$pos}"
   poll_result_label="${poll_labels:$pos}"
+  # save to poll group's label array
+  poll_info_labels[${poll_group}]="${poll_info_label}"
+  poll_result_labels[${poll_group}]="${poll_result_label}"
   # for each poll between label rows
   for ((j=${poll_label_nums[$i]}; j<$((${poll_label_nums[$(($i+1))]} -1)); j++ )); do
     poll_line="${content[$j]}"
@@ -90,7 +117,7 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
     # if there was no match for a year in date administered
     if [[ "${poll_info}" == "${poll_line}" ]]; then
       # set info to match previous poll
-      poll_info="${poll_info_arr[${poll_ids[@]: -1}]}"
+      poll_info="${poll_infos[${poll_ids[@]: -1}]}"
       # set substring position to 0 because the entire line is a set of results
       pos=0
     fi
@@ -98,10 +125,8 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
     # add each value to corresponding array
     poll_groups[${poll_group}]="${poll_groups[$poll_group]}, ${poll_id}"
     poll_ids[${#poll_ids[@]}]="${poll_id}"
-    poll_info_arr[${poll_id}]="${poll_info}"
-    poll_result_arr[${poll_id}]="${poll_result}"
-    poll_info_label_arr[${poll_id}]="${poll_info_label}"
-    poll_result_label_arr[${poll_id}]="${poll_result_label}"
+    poll_infos[${poll_id}]="${poll_info}"
+    poll_results[${poll_id}]="${poll_result}"
   done
 done
 
@@ -110,15 +135,38 @@ for group in "${!poll_groups[@]}"; do
   poll_groups[$group]="${poll_groups[$group]#, }"
 done
 
-for group in "${!poll_groups[@]}"; do
-  first_id="${poll_groups[$group]%%,*}"
-  printf '%s\n' "${poll_result_label_arr[$first_id]}"
-  for id in $(printf '%s\n' ${poll_groups[$group]//,/} ); do
-#    printf '%s\n' "${id}"
-  #  printf '%s\n' "${poll_info_arr[$id]}"
-  #  printf '%s\n' "${poll_result_label_arr[$id]}"
-    printf '%s\n' "${poll_result_arr[$id]//%/}"
-  done
-done
-# replace date labels with YYYYMMDD or YYYYDDD
+OUT_FILE="/cygdrive/c/users/sheacd/GitHub/Polls/2016 Presidential Election/data/R_Primary_National_"
+
+# write each array to file =====================================================
+# data organized by poll group id
+for key in "${!poll_groups[@]}"; do
+  printf '%s\n' "${key};${poll_groups[$key]}"
+done > "${OUT_FILE}_poll_groups.csv"
+for key in "${!poll_info_labels[@]}"; do
+  printf '%s\n' "${key};${poll_info_labels[$key]}"
+done > "${OUT_FILE}_poll_info_labels.csv"
+for key in "${!poll_result_labels[@]}"; do
+  printf '%s\n' "${key};${poll_result_labels[$key]}"
+done > "${OUT_FILE}_poll_result_labels.csv"
+
+# data organized by poll id
+for key in "${!poll_ids[@]}"; do
+  printf '%s\n' "${key};${poll_ids[$key]}"
+done > "${OUT_FILE}_poll_ids.csv"
+for key in "${!poll_infos[@]}"; do
+  printf '%s\n' "${key};${poll_infos[$key]}"
+done > "${OUT_FILE}_poll_infos.csv"
+for key in "${!poll_results[@]}"; do
+  printf '%s\n' "${key};${poll_results[$key]}"
+done > "${OUT_FILE}_poll_results.csv"
+
+# poll info
+#   reformat date to YYYYMMDD or YYYYDDD
+#   remove citation num '[[0-9]+]'
+#   cross-check with 538 poll ratings
+
+# poll results
+#   strip '%'
+#   fprint 02d
+#   consolidate 'other' category
 
