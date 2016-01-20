@@ -122,6 +122,22 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
       pos=0
     fi
     poll_result="${poll_line:$pos}"
+
+    # remove trailing ','
+    # remove citation num '[[0-9]+]'
+    poll_info="${poll_info%,}"
+    poll_info="${poll_info//\[*\]/}"
+    # reformat date to YYYYMMDD or YYYYDDD
+    # cross-check with 538 poll ratings
+
+    # remove trailing ','
+    # remove '%'
+    # replace '—' with '0'
+    poll_result="${poll_result%, }"
+    poll_result="${poll_result//%/}"
+    poll_result="${poll_result//—/0}"
+    # consolidate 'Other' categories into one numeric value
+
     # add each value to corresponding array
     poll_groups[${poll_group}]="${poll_groups[$poll_group]}, ${poll_id}"
     poll_ids[${#poll_ids[@]}]="${poll_id}"
@@ -130,7 +146,7 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
   done
 done
 
-# remove leading empty element
+# remove leading empty element from poll groups
 for group in "${!poll_groups[@]}"; do
   poll_groups[$group]="${poll_groups[$group]#, }"
 done
@@ -159,14 +175,4 @@ done > "${OUT_FILE}_poll_infos.csv"
 for key in "${!poll_results[@]}"; do
   printf '%s\n' "${key};${poll_results[$key]}"
 done > "${OUT_FILE}_poll_results.csv"
-
-# poll info
-#   reformat date to YYYYMMDD or YYYYDDD
-#   remove citation num '[[0-9]+]'
-#   cross-check with 538 poll ratings
-
-# poll results
-#   strip '%'
-#   fprint 02d
-#   consolidate 'other' category
 

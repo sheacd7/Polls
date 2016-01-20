@@ -1,0 +1,5762 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class=" is-copy-enabled is-u2f-enabled">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+    
+    
+    <title>data/pollster-ratings.tsv at master · fivethirtyeight/data</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="fivethirtyeight/data" name="twitter:title" /><meta content="data - Data and code behind the stories and interactives at FiveThirtyEight" name="twitter:description" /><meta content="https://avatars3.githubusercontent.com/u/6267336?v=3&amp;s=400" name="twitter:image:src" />
+      <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars3.githubusercontent.com/u/6267336?v=3&amp;s=400" property="og:image" /><meta content="fivethirtyeight/data" property="og:title" /><meta content="https://github.com/fivethirtyeight/data" property="og:url" /><meta content="data - Data and code behind the stories and interactives at FiveThirtyEight" property="og:description" />
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/MTMzMDE1NzI6NWRiYzliYWI0OWZiZTBkNzhiOTJiMGNiZjQyYWVhOGI6OTcwMjNiMzg1MzVhMmM0OTIxYzE1NDM5Yzk1NmExNjZlN2VhMGM5YzhiZjVjMWYzM2MwMWJlMmE1NmFlNTYwMw==--ba06f57c1ad462c2622a0a27d770f859ec6c8b0f">
+    <meta name="pjax-timeout" content="1000">
+    <link rel="sudo-modal" href="/sessions/sudo_modal">
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="44646225:2F2B:75ED7E6:569D5B66" name="octolytics-dimension-request_id" /><meta content="13301572" name="octolytics-actor-id" /><meta content="sheacd7" name="octolytics-actor-login" /><meta content="64e41457d336c1d1b433136a9728645b29f14e26ad8a8c2788b5336f1d3d78b8" name="octolytics-actor-hash" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
+<meta content="Rails, view, blob#show" data-pjax-transient="true" name="analytics-event" />
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="sheacd7">
+
+        <meta name="expected-hostname" content="github.com">
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta content="389e426e7ef87f1bd4483d99e93460166ed06458" name="form-nonce" />
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-1b53a0bcb9add868a6c5ae469ecabb8b236ffa8f2b05360fde027f75eb714f1b.css" integrity="sha256-G1OgvLmt2Gimxa5Gnsq7iyNv+o8rBTYP3gJ/detxTxs=" media="all" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-70af51f1bed4904749e6ef486ad11871c8ce4361ac82bb5f96a090b7f5346580.css" integrity="sha256-cK9R8b7UkEdJ5u9IatEYccjOQ2GsgrtflqCQt/U0ZYA=" media="all" rel="stylesheet" />
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="dd1646b27509d9a0274507451912e882">
+
+      
+  <meta name="description" content="data - Data and code behind the stories and interactives at FiveThirtyEight">
+  <meta name="go-import" content="github.com/fivethirtyeight/data git https://github.com/fivethirtyeight/data.git">
+
+  <meta content="6267336" name="octolytics-dimension-user_id" /><meta content="fivethirtyeight" name="octolytics-dimension-user_login" /><meta content="17829481" name="octolytics-dimension-repository_id" /><meta content="fivethirtyeight/data" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="17829481" name="octolytics-dimension-repository_network_root_id" /><meta content="fivethirtyeight/data" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/fivethirtyeight/data/commits/master.atom" rel="alternate" title="Recent Commits to data:master" type="application/atom+xml">
+
+  </head>
+
+
+  <body class="logged_in   env-production windows vis-public page-blob">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+
+    
+    
+    
+
+
+
+      <div class="header header-logged-in true" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <span aria-hidden="true" class="mega-octicon octicon-mark-github"></span>
+</a>
+
+
+      <div class="site-search repo-scope js-site-search" role="search">
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/fivethirtyeight/data/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/fivethirtyeight/data/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <label class="js-chromeless-input-container form-control">
+    <div class="scope-badge">This repository</div>
+    <input type="text"
+      class="js-site-search-focus js-site-search-field is-clearable chromeless-input"
+      data-hotkey="s"
+      name="q"
+      placeholder="Search"
+      aria-label="Search this repository"
+      data-global-scope-placeholder="Search GitHub"
+      data-repo-scope-placeholder="Search"
+      tabindex="1"
+      autocapitalize="off">
+  </label>
+</form>
+      </div>
+
+      <ul class="header-nav left" role="navigation">
+        <li class="header-nav-item">
+          <a href="/pulls" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
+            Pull requests
+</a>        </li>
+        <li class="header-nav-item">
+          <a href="/issues" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
+            Issues
+</a>        </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
+          </li>
+      </ul>
+
+    
+<ul class="header-nav user-nav right" id="user-links">
+  <li class="header-nav-item">
+      <span class="js-socket-channel js-updatable-content"
+        data-channel="notification-changed:sheacd7"
+        data-url="/notifications/header">
+      <a href="/notifications" aria-label="You have no unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s" data-ga-click="Header, go to notifications, icon:read" data-hotkey="g n">
+          <span class="mail-status all-read"></span>
+          <span aria-hidden="true" class="octicon octicon-bell"></span>
+</a>  </span>
+
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link tooltipped tooltipped-s js-menu-target" href="/new"
+       aria-label="Create new…"
+       data-ga-click="Header, create new, icon:add">
+      <span aria-hidden="true" class="octicon octicon-plus left"></span>
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+
+  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="fivethirtyeight/data">This repository</span>
+  </div>
+    <a class="dropdown-item" href="/fivethirtyeight/data/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+      </ul>
+    </div>
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link name tooltipped tooltipped-sw js-menu-target" href="/sheacd7"
+       aria-label="View profile and more"
+       data-ga-click="Header, show menu, icon:avatar">
+      <img alt="@sheacd7" class="avatar" height="20" src="https://avatars1.githubusercontent.com/u/13301572?v=3&amp;s=40" width="20" />
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <div class="dropdown-menu  dropdown-menu-sw">
+        <div class=" dropdown-header header-nav-current-user css-truncate">
+            Signed in as <strong class="css-truncate-target">sheacd7</strong>
+
+        </div>
+
+
+        <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="/sheacd7" data-ga-click="Header, go to profile, text:your profile">
+            Your profile
+          </a>
+        <a class="dropdown-item" href="/stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a>
+        <a class="dropdown-item" href="/explore" data-ga-click="Header, go to explore, text:explore">
+          Explore
+        </a>
+          <a class="dropdown-item" href="/integrations" data-ga-click="Header, go to integrations, text:integrations">
+            Integrations
+          </a>
+        <a class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">
+          Help
+        </a>
+
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+            Settings
+          </a>
+
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="389e426e7ef87f1bd4483d99e93460166ed06458" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="PnRYjMTkqW8mvE44CJihp/mK2qjjt/R4JPJxMxPAFurkIlPzYDdaMfn9Yageazas9FvwG3fKnVXZlgOhJ7Geug==" /></div>
+            <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+              Sign out
+            </button>
+</form>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+    
+  </div>
+</div>
+
+      
+
+      
+
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+      <div id="js-flash-container">
+</div>
+
+
+    <div role="main" class="main-content">
+        <div itemscope itemtype="http://schema.org/WebPage">
+    <div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container>
+      
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+  <div class="container repohead-details-container">
+
+    
+
+<ul class="pagehead-actions">
+
+  <li>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="389e426e7ef87f1bd4483d99e93460166ed06458" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="fiMxPe6+mykcL3Urbyq/1FEaM5gmm9BxIDKYtaSgSNbsaGypEnErLQvFXyupYmndfX6OvqOgfrEqbLRTtplkrg==" /></div>      <input id="repository_id" name="repository_id" type="hidden" value="17829481" />
+
+        <div class="select-menu js-menu-container js-select-menu">
+          <a href="/fivethirtyeight/data/subscription"
+            class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" tabindex="0" aria-haspopup="true"
+            data-ga-click="Repository, click Watch settings, action:blob#show">
+            <span class="js-select-button">
+              <span aria-hidden="true" class="octicon octicon-eye"></span>
+              Watch
+            </span>
+          </a>
+          <a class="social-count js-social-count" href="/fivethirtyeight/data/watchers">
+            449
+          </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="true">
+            <div class="select-menu-header">
+              <span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+              <span class="select-menu-title">Notifications</span>
+            </div>
+
+              <div class="select-menu-list js-navigation-container" role="menu">
+
+                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                  <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+                  <div class="select-menu-item-text">
+                    <input checked="checked" id="do_included" name="do" type="radio" value="included" />
+                    <span class="select-menu-item-heading">Not watching</span>
+                    <span class="description">Be notified when participating or @mentioned.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <span aria-hidden="true" class="octicon octicon-eye"></span>
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+                  <div class="select-menu-item-text">
+                    <input id="do_subscribed" name="do" type="radio" value="subscribed" />
+                    <span class="select-menu-item-heading">Watching</span>
+                    <span class="description">Be notified of all conversations.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <span aria-hidden="true" class="octicon octicon-eye"></span>
+                      Unwatch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+                  <div class="select-menu-item-text">
+                    <input id="do_ignore" name="do" type="radio" value="ignore" />
+                    <span class="select-menu-item-heading">Ignoring</span>
+                    <span class="description">Never be notified.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <span aria-hidden="true" class="octicon octicon-mute"></span>
+                      Stop ignoring
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/fivethirtyeight/data/unstar" class="js-toggler-form starred js-unstar-button" data-form-nonce="389e426e7ef87f1bd4483d99e93460166ed06458" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="4GaWQPvnYmP+NmeKVFJ0taP/hzUrtnSxLw6EyUfRSKwsGhN3tUl0ZA7hGZoMtrIC+fzcAhiGesYFrfhKQWcCyw==" /></div>
+      <button
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Unstar this repository" title="Unstar fivethirtyeight/data"
+        data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
+        <span aria-hidden="true" class="octicon octicon-star"></span>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="/fivethirtyeight/data/stargazers">
+          2,038
+        </a>
+</form>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/fivethirtyeight/data/star" class="js-toggler-form unstarred js-star-button" data-form-nonce="389e426e7ef87f1bd4483d99e93460166ed06458" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="71wDG9ZN1EaPit7FzxJzYxSec1//7V1PPCV1fIam5WdaAal2Zryhapo2wA3cf/58/aMfgdaV70v2fWlrSzXEPg==" /></div>
+      <button
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Star this repository" title="Star fivethirtyeight/data"
+        data-ga-click="Repository, click star button, action:blob#show; text:Star">
+        <span aria-hidden="true" class="octicon octicon-star"></span>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="/fivethirtyeight/data/stargazers">
+          2,038
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/fivethirtyeight/data/fork" class="btn-with-count" data-form-nonce="389e426e7ef87f1bd4483d99e93460166ed06458" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="pt4ufukxxnMUPXU72RNoXBgrH3zAhAdmWIjgEaoutvHl4DUXPl/7oCo/Xx/1EgUaWcU0+FcvGUEJUanV0Q/M7A==" /></div>
+            <button
+                type="submit"
+                class="btn btn-sm btn-with-count"
+                data-ga-click="Repository, show fork modal, action:blob#show; text:Fork"
+                title="Fork your own copy of fivethirtyeight/data to your account"
+                aria-label="Fork your own copy of fivethirtyeight/data to your account">
+              <span aria-hidden="true" class="octicon octicon-repo-forked"></span>
+              Fork
+            </button>
+</form>
+    <a href="/fivethirtyeight/data/network" class="social-count">
+      817
+    </a>
+  </li>
+</ul>
+
+    <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+  <span aria-hidden="true" class="octicon octicon-repo"></span>
+  <span class="author"><a href="/fivethirtyeight" class="url fn" itemprop="url" rel="author"><span itemprop="title">fivethirtyeight</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="/fivethirtyeight/data" data-pjax="#js-repo-pjax-container">data</a></strong>
+
+  <span class="page-context-loader">
+    <img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+  </span>
+
+</h1>
+
+  </div>
+  <div class="container">
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <a href="/fivethirtyeight/data" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /fivethirtyeight/data">
+    <span aria-hidden="true" class="octicon octicon-code"></span>
+    Code
+</a>
+    <a href="/fivethirtyeight/data/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /fivethirtyeight/data/issues">
+      <span aria-hidden="true" class="octicon octicon-issue-opened"></span>
+      Issues
+      <span class="counter">6</span>
+</a>
+  <a href="/fivethirtyeight/data/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /fivethirtyeight/data/pulls">
+    <span aria-hidden="true" class="octicon octicon-git-pull-request"></span>
+    Pull requests
+    <span class="counter">2</span>
+</a>
+    <a href="/fivethirtyeight/data/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /fivethirtyeight/data/wiki">
+      <span aria-hidden="true" class="octicon octicon-book"></span>
+      Wiki
+</a>
+  <a href="/fivethirtyeight/data/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /fivethirtyeight/data/pulse">
+    <span aria-hidden="true" class="octicon octicon-pulse"></span>
+    Pulse
+</a>
+  <a href="/fivethirtyeight/data/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /fivethirtyeight/data/graphs">
+    <span aria-hidden="true" class="octicon octicon-graph"></span>
+    Graphs
+</a>
+
+</nav>
+
+  </div>
+</div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+
+<a href="/fivethirtyeight/data/blob/580be139f95417489915b3020babaeb241aada90/pollster-ratings/pollster-ratings.tsv" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+<!-- blob contrib key: blob_contributors:v21:dbbb854aeda820f1a99fc2238665e9ff -->
+
+<div class="file-navigation js-zeroclipboard-container">
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    title="master"
+    type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <i>Branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/fivethirtyeight/data/blob/master/pollster-ratings/pollster-ratings.tsv"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+              <span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/fivethirtyeight/data/blob/revert-34-patch-1/pollster-ratings/pollster-ratings.tsv"
+               data-name="revert-34-patch-1"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+              <span class="select-menu-item-text css-truncate-target" title="revert-34-patch-1">
+                revert-34-patch-1
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <div class="btn-group right">
+    <a href="/fivethirtyeight/data/find/master"
+          class="js-show-file-finder btn btn-sm"
+          data-pjax
+          data-hotkey="t">
+      Find file
+    </a>
+    <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
+  </div>
+  <div class="breadcrumb js-zeroclipboard-target">
+    <span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/fivethirtyeight/data" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">data</span></a></span></span><span class="separator">/</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/fivethirtyeight/data/tree/master/pollster-ratings" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">pollster-ratings</span></a></span><span class="separator">/</span><strong class="final-path">pollster-ratings.tsv</strong>
+  </div>
+</div>
+
+
+  <div class="commit-tease">
+      <span class="right">
+        <a class="commit-tease-sha" href="/fivethirtyeight/data/commit/ffc9fd12240796baf16e9ebccddb4ad0a1843dcb" data-pjax>
+          ffc9fd1
+        </a>
+        <time datetime="2014-09-25T16:19:03Z" is="relative-time">Sep 25, 2014</time>
+      </span>
+      <div>
+        <img alt="@ritchieking" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/2760121?v=3&amp;s=40" width="20" />
+        <a href="/ritchieking" class="user-mention" rel="contributor">ritchieking</a>
+          <a href="/fivethirtyeight/data/commit/ffc9fd12240796baf16e9ebccddb4ad0a1843dcb" class="message" data-pjax="true" title="add raw data tsv files">add raw data tsv files</a>
+      </div>
+
+    <div class="commit-tease-contributors">
+      <a class="muted-link contributors-toggle" href="#blob_contributors_box" rel="facebox">
+        <strong>1</strong>
+         contributor
+      </a>
+      
+    </div>
+
+    <div id="blob_contributors_box" style="display:none">
+      <h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2>
+      <ul class="facebox-user-list" data-facebox-id="facebox-description">
+          <li class="facebox-user-list-item">
+            <img alt="@ritchieking" height="24" src="https://avatars2.githubusercontent.com/u/2760121?v=3&amp;s=48" width="24" />
+            <a href="/ritchieking">ritchieking</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+<div class="file">
+  <div class="file-header">
+  <div class="file-actions">
+
+    <div class="btn-group">
+      <a href="/fivethirtyeight/data/raw/master/pollster-ratings/pollster-ratings.tsv" class="btn btn-sm " id="raw-url">Raw</a>
+        <a href="/fivethirtyeight/data/blame/master/pollster-ratings/pollster-ratings.tsv" class="btn btn-sm js-update-url-with-hash">Blame</a>
+      <a href="/fivethirtyeight/data/commits/master/pollster-ratings/pollster-ratings.tsv" class="btn btn-sm " rel="nofollow">History</a>
+    </div>
+
+        <a class="btn-octicon tooltipped tooltipped-nw"
+           href="github-windows://openRepo/https://github.com/fivethirtyeight/data?branch=master&amp;filepath=pollster-ratings%2Fpollster-ratings.tsv"
+           aria-label="Open this file in GitHub Desktop"
+           data-ga-click="Repository, open with desktop, type:windows">
+            <span aria-hidden="true" class="octicon octicon-device-desktop"></span>
+        </a>
+
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/fivethirtyeight/data/edit/master/pollster-ratings/pollster-ratings.tsv" class="inline-form js-update-url-with-hash" data-form-nonce="389e426e7ef87f1bd4483d99e93460166ed06458" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8Kzyfa+8cIh9L1jSMVF731VGGnH+peVM7/uMv8qbO8vZkvmenkIDc4cpZ8a4xCvKrQlMezbdpxc+Gl0T5FZ2Sg==" /></div>
+          <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
+            aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
+            <span aria-hidden="true" class="octicon octicon-pencil"></span>
+          </button>
+</form>        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/fivethirtyeight/data/delete/master/pollster-ratings/pollster-ratings.tsv" class="inline-form" data-form-nonce="389e426e7ef87f1bd4483d99e93460166ed06458" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="JoF4RZks1HESA+h8sQB5RRTr9d2C8l2Yq8DmF5e2c9HIS8KqySbXhrFbSVTUmBBCZaRkUfiX0VmvAauqMIOMlQ==" /></div>
+          <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
+            aria-label="Fork this project and delete the file" data-disable-with>
+            <span aria-hidden="true" class="octicon octicon-trashcan"></span>
+          </button>
+</form>  </div>
+
+  <div class="file-info">
+      339 lines (338 sloc)
+      <span class="file-info-divider"></span>
+    27.8 KB
+  </div>
+</div>
+
+  
+
+  <div class="blob-wrapper data type-text">
+      <div class="blob-interaction-bar">
+  <span aria-hidden="true" class="octicon octicon-search"></span>
+  <input type="text" name="filter" class="js-csv-filter-field blob-filter" autocapitalize="off"
+         placeholder="Search this file…" aria-label="Search this file…">
+</div>
+
+<div class="markdown-body">
+  <table class="js-csv-data csv-data js-file-line-container">
+    <thead>
+      <tr id="LC1" class="js-file-line">
+        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <th>ID</th>
+        <th>Pollster</th>
+        <th>Calls Cellphones</th>
+        <th>NCPP/AAPOR/Roper</th>
+        <th>Polls</th>
+        <th>Simple Average Error</th>
+        <th>Simple Plus-Minus</th>
+        <th>Advanced Plus-Minus</th>
+        <th>Predictive Plus-Minus</th>
+        <th>538 Grade</th>
+        <th>Banned by 538</th>
+        <th>Mean-Reverted Bias</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="LC2" class="js-file-line">
+        <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td>1</td>
+        <td>Field Research Corporation (Field Poll)</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>23</td>
+        <td>3.92547</td>
+        <td>-1.612882</td>
+        <td>-2.509674</td>
+        <td>-1.32377</td>
+        <td>A+</td>
+        <td></td>
+        <td>-1.142667826</td>
+      </tr>
+      <tr id="LC3" class="js-file-line">
+        <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td>2</td>
+        <td>Selzer &amp; Company</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>32</td>
+        <td>4.08464</td>
+        <td>-1.34223</td>
+        <td>-1.459742</td>
+        <td>-0.982943</td>
+        <td>A+</td>
+        <td></td>
+        <td>0.010389923</td>
+      </tr>
+      <tr id="LC4" class="js-file-line">
+        <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td>3</td>
+        <td>Ciruli Associates</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>17</td>
+        <td>3.60412</td>
+        <td>-1.868177</td>
+        <td>-2.036298</td>
+        <td>-0.967599</td>
+        <td>A+</td>
+        <td></td>
+        <td>-0.717610435</td>
+      </tr>
+      <tr id="LC5" class="js-file-line">
+        <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td>4</td>
+        <td>SurveyUSA</td>
+        <td>Sometimes</td>
+        <td>yes</td>
+        <td>722</td>
+        <td>4.48207</td>
+        <td>-0.9269388</td>
+        <td>-1.018211</td>
+        <td>-0.9028778</td>
+        <td>A</td>
+        <td></td>
+        <td>-0.174487317</td>
+      </tr>
+      <tr id="LC6" class="js-file-line">
+        <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td>5</td>
+        <td>Elway Research</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>16</td>
+        <td>4.39862</td>
+        <td>-1.488998</td>
+        <td>-1.932285</td>
+        <td>-0.9016041</td>
+        <td>A</td>
+        <td></td>
+        <td>0.471364091</td>
+      </tr>
+      <tr id="LC7" class="js-file-line">
+        <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td>6</td>
+        <td>Grove Insight</td>
+        <td>yes</td>
+        <td></td>
+        <td>29</td>
+        <td>3.14235</td>
+        <td>-1.694211</td>
+        <td>-2.145177</td>
+        <td>-0.8894342</td>
+        <td>A</td>
+        <td></td>
+        <td>0.480680407</td>
+      </tr>
+      <tr id="LC8" class="js-file-line">
+        <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td>7</td>
+        <td>Blum &amp; Weprin Associates</td>
+        <td>yes</td>
+        <td></td>
+        <td>18</td>
+        <td>4.55944</td>
+        <td>-0.4985823</td>
+        <td>-2.823918</td>
+        <td>-0.873236</td>
+        <td>A</td>
+        <td></td>
+        <td>-1.034504348</td>
+      </tr>
+      <tr id="LC9" class="js-file-line">
+        <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td>8</td>
+        <td>National Journal</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>12</td>
+        <td>2.59913</td>
+        <td>-2.390993</td>
+        <td>-2.080368</td>
+        <td>-0.8134748</td>
+        <td>A</td>
+        <td></td>
+        <td>-0.178693429</td>
+      </tr>
+      <tr id="LC10" class="js-file-line">
+        <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td>9</td>
+        <td>Ipsos, telephone</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>21</td>
+        <td>3.8299</td>
+        <td>-1.307062</td>
+        <td>-1.193011</td>
+        <td>-0.7256084</td>
+        <td>A-</td>
+        <td></td>
+        <td>0.420008571</td>
+      </tr>
+      <tr id="LC11" class="js-file-line">
+        <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td>10</td>
+        <td>Muhlenberg College</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>20</td>
+        <td>2.94852</td>
+        <td>-2.058851</td>
+        <td>-1.164778</td>
+        <td>-0.6998314</td>
+        <td>A-</td>
+        <td></td>
+        <td>-0.491864</td>
+      </tr>
+      <tr id="LC12" class="js-file-line">
+        <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td>11</td>
+        <td>Public Policy Institute of California</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>10</td>
+        <td>3.98058</td>
+        <td>-2.010559</td>
+        <td>-1.901415</td>
+        <td>-0.6859038</td>
+        <td>A-</td>
+        <td></td>
+        <td>-0.621734324</td>
+      </tr>
+      <tr id="LC13" class="js-file-line">
+        <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td>12</td>
+        <td>ABC News/Washington Post</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>50</td>
+        <td>3.07838</td>
+        <td>-1.490185</td>
+        <td>-0.7451531</td>
+        <td>-0.6733085</td>
+        <td>A-</td>
+        <td></td>
+        <td>0.5870142</td>
+      </tr>
+      <tr id="LC14" class="js-file-line">
+        <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td>13</td>
+        <td>University of Cincinnati (Ohio Poll)</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>38</td>
+        <td>3.73136</td>
+        <td>-1.629992</td>
+        <td>-0.756938</td>
+        <td>-0.6459742</td>
+        <td>A-</td>
+        <td></td>
+        <td>-1.452821356</td>
+      </tr>
+      <tr id="LC15" class="js-file-line">
+        <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td>14</td>
+        <td>Behavior Research Center (Rocky Mountain)</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>7</td>
+        <td>3.46</td>
+        <td>-3.136984</td>
+        <td>-2.373401</td>
+        <td>-0.6407706</td>
+        <td>A-</td>
+        <td></td>
+        <td>0.088</td>
+      </tr>
+      <tr id="LC16" class="js-file-line">
+        <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td>15</td>
+        <td>Siena College</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>32</td>
+        <td>5.10147</td>
+        <td>-0.03355</td>
+        <td>-0.793005</td>
+        <td>-0.6388207</td>
+        <td>A-</td>
+        <td></td>
+        <td>-0.823105</td>
+      </tr>
+      <tr id="LC17" class="js-file-line">
+        <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td>16</td>
+        <td>Fairleigh Dickinson University (PublicMind)</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>17</td>
+        <td>4.17045</td>
+        <td>-1.088215</td>
+        <td>-0.9900424</td>
+        <td>-0.5891662</td>
+        <td>A-</td>
+        <td></td>
+        <td>-0.007903652</td>
+      </tr>
+      <tr id="LC18" class="js-file-line">
+        <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td>17</td>
+        <td>CNN/Opinion Research Corp.</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>72</td>
+        <td>4.60979</td>
+        <td>-0.7286522</td>
+        <td>-0.5703554</td>
+        <td>-0.5827255</td>
+        <td>A-</td>
+        <td></td>
+        <td>-0.556254</td>
+      </tr>
+      <tr id="LC19" class="js-file-line">
+        <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td>18</td>
+        <td>Montana State University Billings</td>
+        <td>yes</td>
+        <td></td>
+        <td>7</td>
+        <td>3.60714</td>
+        <td>-2.21385</td>
+        <td>-4.190756</td>
+        <td>-0.553575</td>
+        <td>A-</td>
+        <td></td>
+        <td>0.559188378</td>
+      </tr>
+      <tr id="LC20" class="js-file-line">
+        <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td>19</td>
+        <td>GfK Group</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>18</td>
+        <td>3.46375</td>
+        <td>-1.202094</td>
+        <td>-0.8216731</td>
+        <td>-0.5404262</td>
+        <td>A-</td>
+        <td></td>
+        <td>-0.045641625</td>
+      </tr>
+      <tr id="LC21" class="js-file-line">
+        <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td>20</td>
+        <td>University of Connecticut</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>7</td>
+        <td>3.64012</td>
+        <td>-1.734945</td>
+        <td>-1.751012</td>
+        <td>-0.5230213</td>
+        <td>A-</td>
+        <td></td>
+        <td>-0.363788108</td>
+      </tr>
+      <tr id="LC22" class="js-file-line">
+        <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td>21</td>
+        <td>NBC News/Wall Street Journal</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>23</td>
+        <td>4.0616</td>
+        <td>-0.8062829</td>
+        <td>-0.5779117</td>
+        <td>-0.4854578</td>
+        <td>A-</td>
+        <td></td>
+        <td>0.467745</td>
+      </tr>
+      <tr id="LC23" class="js-file-line">
+        <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td>22</td>
+        <td>Monmouth University</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>31</td>
+        <td>4.42292</td>
+        <td>-0.5089944</td>
+        <td>-0.466397</td>
+        <td>-0.4674737</td>
+        <td>A-</td>
+        <td></td>
+        <td>-0.088719448</td>
+      </tr>
+      <tr id="LC24" class="js-file-line">
+        <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td>23</td>
+        <td>Franklin &amp; Marshall College</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>15</td>
+        <td>4.28013</td>
+        <td>-1.175056</td>
+        <td>-0.6561467</td>
+        <td>-0.4462911</td>
+        <td>B+</td>
+        <td></td>
+        <td>-0.458445909</td>
+      </tr>
+      <tr id="LC25" class="js-file-line">
+        <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td>24</td>
+        <td>Davis, Hibbitts &amp; Midghall, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>11</td>
+        <td>2.43549</td>
+        <td>-2.596931</td>
+        <td>-2.210708</td>
+        <td>-0.3797086</td>
+        <td>B+</td>
+        <td></td>
+        <td>-0.04620825</td>
+      </tr>
+      <tr id="LC26" class="js-file-line">
+        <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td>25</td>
+        <td>Research &amp; Polling, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>24</td>
+        <td>4.2887</td>
+        <td>-1.089091</td>
+        <td>-1.236497</td>
+        <td>-0.3773816</td>
+        <td>B+</td>
+        <td></td>
+        <td>-0.602994906</td>
+      </tr>
+      <tr id="LC27" class="js-file-line">
+        <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td>26</td>
+        <td>University of South Alabama</td>
+        <td>yes</td>
+        <td></td>
+        <td>8</td>
+        <td>2.74933</td>
+        <td>-2.367621</td>
+        <td>-2.848764</td>
+        <td>-0.3678937</td>
+        <td>B+</td>
+        <td></td>
+        <td>-0.406172632</td>
+      </tr>
+      <tr id="LC28" class="js-file-line">
+        <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td>27</td>
+        <td>Los Angeles Times</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>40</td>
+        <td>5.23769</td>
+        <td>-0.7281817</td>
+        <td>-0.2545127</td>
+        <td>-0.3659749</td>
+        <td>B+</td>
+        <td></td>
+        <td>-0.611715556</td>
+      </tr>
+      <tr id="LC29" class="js-file-line">
+        <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td>28</td>
+        <td>Marist College</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>99</td>
+        <td>4.98308</td>
+        <td>-0.4741889</td>
+        <td>-0.2348228</td>
+        <td>-0.3330505</td>
+        <td>B+</td>
+        <td></td>
+        <td>-1.52508</td>
+      </tr>
+      <tr id="LC30" class="js-file-line">
+        <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td>29</td>
+        <td>Time/Abt SRBI</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>5</td>
+        <td>2.73532</td>
+        <td>-2.314465</td>
+        <td>-1.098558</td>
+        <td>-0.3307491</td>
+        <td>B+</td>
+        <td></td>
+        <td>0.217547059</td>
+      </tr>
+      <tr id="LC31" class="js-file-line">
+        <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td>30</td>
+        <td>SoonerPoll.com</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>11</td>
+        <td>6.87242</td>
+        <td>1.141261</td>
+        <td>-0.4104658</td>
+        <td>-0.325278</td>
+        <td>B+</td>
+        <td></td>
+        <td>1.471188462</td>
+      </tr>
+      <tr id="LC32" class="js-file-line">
+        <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td>31</td>
+        <td>St. Norbert College</td>
+        <td>yes</td>
+        <td></td>
+        <td>11</td>
+        <td>3.78421</td>
+        <td>-2.340314</td>
+        <td>-1.988579</td>
+        <td>-0.3201131</td>
+        <td>B+</td>
+        <td></td>
+        <td>0.1427755</td>
+      </tr>
+      <tr id="LC33" class="js-file-line">
+        <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td>32</td>
+        <td>Quinnipiac University</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>133</td>
+        <td>4.59519</td>
+        <td>-0.6868896</td>
+        <td>-0.2012938</td>
+        <td>-0.2916989</td>
+        <td>B+</td>
+        <td></td>
+        <td>-0.858015349</td>
+      </tr>
+      <tr id="LC34" class="js-file-line">
+        <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td>33</td>
+        <td>Lake Research Partners</td>
+        <td>yes</td>
+        <td></td>
+        <td>9</td>
+        <td>3.84613</td>
+        <td>-1.655618</td>
+        <td>-2.231017</td>
+        <td>-0.2897414</td>
+        <td>B+</td>
+        <td></td>
+        <td>0.498152308</td>
+      </tr>
+      <tr id="LC35" class="js-file-line">
+        <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td>34</td>
+        <td>Market Shares Corp.</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>26</td>
+        <td>6.78489</td>
+        <td>1.316529</td>
+        <td>-0.1198302</td>
+        <td>-0.2895489</td>
+        <td>B+</td>
+        <td></td>
+        <td>-1.730507308</td>
+      </tr>
+      <tr id="LC36" class="js-file-line">
+        <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td>35</td>
+        <td>Mason-Dixon Polling &amp; Research, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>407</td>
+        <td>5.15265</td>
+        <td>-0.1888967</td>
+        <td>-0.4909905</td>
+        <td>-0.2816466</td>
+        <td>B+</td>
+        <td></td>
+        <td>-1.058022507</td>
+      </tr>
+      <tr id="LC37" class="js-file-line">
+        <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td>36</td>
+        <td>RKM Research and Communications, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>26</td>
+        <td>5.59333</td>
+        <td>-0.5229378</td>
+        <td>-0.8733286</td>
+        <td>-0.2365313</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.20611425</td>
+      </tr>
+      <tr id="LC38" class="js-file-line">
+        <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td>37</td>
+        <td>CBS News/New York Times</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>54</td>
+        <td>4.77238</td>
+        <td>-0.4078286</td>
+        <td>-0.0503071</td>
+        <td>-0.2346829</td>
+        <td>B</td>
+        <td></td>
+        <td>0.68373027</td>
+      </tr>
+      <tr id="LC39" class="js-file-line">
+        <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td>38</td>
+        <td>RT Strategies</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>42</td>
+        <td>5.76158</td>
+        <td>0.6726662</td>
+        <td>-0.0138873</td>
+        <td>-0.2261228</td>
+        <td>B</td>
+        <td></td>
+        <td>1.091760833</td>
+      </tr>
+      <tr id="LC40" class="js-file-line">
+        <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td>39</td>
+        <td>Princeton Survey Research Associates International</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>31</td>
+        <td>4.56468</td>
+        <td>-0.1109573</td>
+        <td>0.0088521</td>
+        <td>-0.2259537</td>
+        <td>B</td>
+        <td></td>
+        <td>0.1501085</td>
+      </tr>
+      <tr id="LC41" class="js-file-line">
+        <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td>40</td>
+        <td>Castleton State College</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>1</td>
+        <td>5.8</td>
+        <td>-3.753266</td>
+        <td>-3.238781</td>
+        <td>-0.2228449</td>
+        <td>B</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC42" class="js-file-line">
+        <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td>41</td>
+        <td>Western New England University</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>9</td>
+        <td>6.34987</td>
+        <td>0.651647</td>
+        <td>-0.0331289</td>
+        <td>-0.2128313</td>
+        <td>B</td>
+        <td></td>
+        <td>-1.027738947</td>
+      </tr>
+      <tr id="LC43" class="js-file-line">
+        <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td>42</td>
+        <td>Angus Reid Global</td>
+        <td></td>
+        <td></td>
+        <td>29</td>
+        <td>3.26358</td>
+        <td>-1.469814</td>
+        <td>-1.574631</td>
+        <td>-0.2119248</td>
+        <td>B</td>
+        <td></td>
+        <td>-1.338045254</td>
+      </tr>
+      <tr id="LC44" class="js-file-line">
+        <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td>43</td>
+        <td>Garin-Hart-Yang Research Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>19</td>
+        <td>5.28988</td>
+        <td>-0.3020963</td>
+        <td>-0.9869623</td>
+        <td>-0.1997202</td>
+        <td>B</td>
+        <td></td>
+        <td>1.151485306</td>
+      </tr>
+      <tr id="LC45" class="js-file-line">
+        <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td>44</td>
+        <td>EPIC-MRA</td>
+        <td>yes</td>
+        <td></td>
+        <td>38</td>
+        <td>5.44426</td>
+        <td>-0.1066706</td>
+        <td>-0.6325369</td>
+        <td>-0.1959903</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.337568469</td>
+      </tr>
+      <tr id="LC46" class="js-file-line">
+        <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td>45</td>
+        <td>Suffolk University</td>
+        <td>yes</td>
+        <td></td>
+        <td>55</td>
+        <td>5.01088</td>
+        <td>-1.139775</td>
+        <td>-0.5348258</td>
+        <td>-0.1934035</td>
+        <td>B</td>
+        <td></td>
+        <td>1.07248</td>
+      </tr>
+      <tr id="LC47" class="js-file-line">
+        <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td>46</td>
+        <td>Fleming &amp; Associates</td>
+        <td>yes</td>
+        <td></td>
+        <td>14</td>
+        <td>4.94481</td>
+        <td>-0.8622802</td>
+        <td>-1.200976</td>
+        <td>-0.1826907</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.461548571</td>
+      </tr>
+      <tr id="LC48" class="js-file-line">
+        <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td>47</td>
+        <td>Marquette University</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>0.889432</td>
+        <td>-4.609801</td>
+        <td>-3.745945</td>
+        <td>-0.1741176</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.020792182</td>
+      </tr>
+      <tr id="LC49" class="js-file-line">
+        <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td>48</td>
+        <td>Tarrance Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>19</td>
+        <td>5.49157</td>
+        <td>-0.4058728</td>
+        <td>-0.89208</td>
+        <td>-0.1629291</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.92163</td>
+      </tr>
+      <tr id="LC50" class="js-file-line">
+        <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td>49</td>
+        <td>IBD/TIPP</td>
+        <td>yes</td>
+        <td></td>
+        <td>17</td>
+        <td>2.30686</td>
+        <td>-1.165064</td>
+        <td>-0.9291317</td>
+        <td>-0.1473386</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.746592979</td>
+      </tr>
+      <tr id="LC51" class="js-file-line">
+        <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td>50</td>
+        <td>Pew Research Center</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>19</td>
+        <td>3.24112</td>
+        <td>-0.5670475</td>
+        <td>0.2523617</td>
+        <td>-0.1353851</td>
+        <td>B</td>
+        <td></td>
+        <td>0.428519796</td>
+      </tr>
+      <tr id="LC52" class="js-file-line">
+        <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td>51</td>
+        <td>University of New Hampshire</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>75</td>
+        <td>5.37013</td>
+        <td>0.0241794</td>
+        <td>0.0743052</td>
+        <td>-0.1236471</td>
+        <td>B</td>
+        <td></td>
+        <td>1.457512105</td>
+      </tr>
+      <tr id="LC53" class="js-file-line">
+        <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td>52</td>
+        <td>Elon University</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>3</td>
+        <td>3.42747</td>
+        <td>-0.4792169</td>
+        <td>0.3532298</td>
+        <td>-0.1178753</td>
+        <td>B</td>
+        <td></td>
+        <td>0.222546364</td>
+      </tr>
+      <tr id="LC54" class="js-file-line">
+        <td id="L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td>53</td>
+        <td>RBI Strategies &amp; Research</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>0.7</td>
+        <td>-4.629187</td>
+        <td>-6.274689</td>
+        <td>-0.1019925</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.021992065</td>
+      </tr>
+      <tr id="LC55" class="js-file-line">
+        <td id="L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td>54</td>
+        <td>Virginia Commonwealth University</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>5</td>
+        <td>4.8974</td>
+        <td>-0.0336291</td>
+        <td>0.6199648</td>
+        <td>-0.0852458</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.276942857</td>
+      </tr>
+      <tr id="LC56" class="js-file-line">
+        <td id="L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td>55</td>
+        <td>MassINC Polling Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>2.33721</td>
+        <td>-3.261399</td>
+        <td>-2.944151</td>
+        <td>-0.0797889</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.276416471</td>
+      </tr>
+      <tr id="LC57" class="js-file-line">
+        <td id="L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td>56</td>
+        <td>Richard Day Research, Inc.</td>
+        <td></td>
+        <td>yes</td>
+        <td>11</td>
+        <td>5.50424</td>
+        <td>0.2144958</td>
+        <td>-1.00457</td>
+        <td>-0.0561107</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.770405122</td>
+      </tr>
+      <tr id="LC58" class="js-file-line">
+        <td id="L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td>57</td>
+        <td>Fox News/Anderson Robbins Research/Shaw &amp; Company Research</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>4</td>
+        <td>3.40776</td>
+        <td>-0.3866414</td>
+        <td>1.025637</td>
+        <td>-0.0420773</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.399381176</td>
+      </tr>
+      <tr id="LC59" class="js-file-line">
+        <td id="L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td>58</td>
+        <td>Pan Atlantic SMS Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>13</td>
+        <td>6.71862</td>
+        <td>0.5674083</td>
+        <td>-0.8091345</td>
+        <td>-0.0409403</td>
+        <td>B</td>
+        <td></td>
+        <td>0.455539512</td>
+      </tr>
+      <tr id="LC60" class="js-file-line">
+        <td id="L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td>59</td>
+        <td>New England College</td>
+        <td>yes</td>
+        <td></td>
+        <td>3</td>
+        <td>1.54255</td>
+        <td>-2.014796</td>
+        <td>-3.482635</td>
+        <td>-0.0388584</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.140231818</td>
+      </tr>
+      <tr id="LC61" class="js-file-line">
+        <td id="L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td>60</td>
+        <td>University of Washington</td>
+        <td>yes</td>
+        <td></td>
+        <td>10</td>
+        <td>3.99278</td>
+        <td>-1.020859</td>
+        <td>-0.9640167</td>
+        <td>-0.02202</td>
+        <td>B</td>
+        <td></td>
+        <td>0.2290515</td>
+      </tr>
+      <tr id="LC62" class="js-file-line">
+        <td id="L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td>61</td>
+        <td>University of Southern California</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>4.797</td>
+        <td>-0.1249713</td>
+        <td>-2.430562</td>
+        <td>-0.0193667</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.559851765</td>
+      </tr>
+      <tr id="LC63" class="js-file-line">
+        <td id="L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td>62</td>
+        <td>Stockton College</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>1</td>
+        <td>-4.086053</td>
+        <td>-4.676465</td>
+        <td>-0.0021035</td>
+        <td>B</td>
+        <td></td>
+        <td>-0.05625</td>
+      </tr>
+      <tr id="LC64" class="js-file-line">
+        <td id="L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td>63</td>
+        <td>University of Arkansas</td>
+        <td></td>
+        <td>yes</td>
+        <td>2</td>
+        <td>1.38</td>
+        <td>-3.852941</td>
+        <td>-4.500444</td>
+        <td>0.0088979</td>
+        <td>B-</td>
+        <td></td>
+        <td>0.084931875</td>
+      </tr>
+      <tr id="LC65" class="js-file-line">
+        <td id="L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td>64</td>
+        <td>Indiana University</td>
+        <td></td>
+        <td>yes</td>
+        <td>2</td>
+        <td>0.855</td>
+        <td>-4.957365</td>
+        <td>-4.498387</td>
+        <td>0.0090264</td>
+        <td>B-</td>
+        <td></td>
+        <td>0.0534375</td>
+      </tr>
+      <tr id="LC66" class="js-file-line">
+        <td id="L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td>65</td>
+        <td>High Point University</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>0.949348</td>
+        <td>-3.22105</td>
+        <td>-4.483908</td>
+        <td>0.0099313</td>
+        <td>B-</td>
+        <td></td>
+        <td>0.005796688</td>
+      </tr>
+      <tr id="LC67" class="js-file-line">
+        <td id="L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td>66</td>
+        <td>Public Policy Polling</td>
+        <td></td>
+        <td></td>
+        <td>297</td>
+        <td>4.57592</td>
+        <td>-0.3516919</td>
+        <td>-0.4227452</td>
+        <td>0.028885</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.72498059</td>
+      </tr>
+      <tr id="LC68" class="js-file-line">
+        <td id="L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td>67</td>
+        <td>Strategies 360</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>2.43608</td>
+        <td>-2.952162</td>
+        <td>-4.016275</td>
+        <td>0.0391584</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.151598125</td>
+      </tr>
+      <tr id="LC69" class="js-file-line">
+        <td id="L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td>68</td>
+        <td>National Research, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>5.11114</td>
+        <td>-0.7508003</td>
+        <td>-1.81595</td>
+        <td>0.0529406</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.540010588</td>
+      </tr>
+      <tr id="LC70" class="js-file-line">
+        <td id="L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td>69</td>
+        <td>Cole Hargrave Snodgrass &amp; Associates</td>
+        <td>yes</td>
+        <td></td>
+        <td>3</td>
+        <td>3.44333</td>
+        <td>-1.783325</td>
+        <td>-2.394754</td>
+        <td>0.0600399</td>
+        <td>B-</td>
+        <td></td>
+        <td>0.31303</td>
+      </tr>
+      <tr id="LC71" class="js-file-line">
+        <td id="L71" class="blob-num js-line-number" data-line-number="71"></td>
+        <td>70</td>
+        <td>Keating Research, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>1.86031</td>
+        <td>-2.011261</td>
+        <td>-3.670209</td>
+        <td>0.0607875</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.116269375</td>
+      </tr>
+      <tr id="LC72" class="js-file-line">
+        <td id="L72" class="blob-num js-line-number" data-line-number="72"></td>
+        <td>71</td>
+        <td>Harstad Strategic Research, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>7</td>
+        <td>4.1712</td>
+        <td>-1.667901</td>
+        <td>-0.9396045</td>
+        <td>0.0615077</td>
+        <td>B-</td>
+        <td></td>
+        <td>0.680793514</td>
+      </tr>
+      <tr id="LC73" class="js-file-line">
+        <td id="L73" class="blob-num js-line-number" data-line-number="73"></td>
+        <td>72</td>
+        <td>GBA Strategies</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>3.7</td>
+        <td>-2.556291</td>
+        <td>-3.519624</td>
+        <td>0.0701991</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.230594375</td>
+      </tr>
+      <tr id="LC74" class="js-file-line">
+        <td id="L74" class="blob-num js-line-number" data-line-number="74"></td>
+        <td>73</td>
+        <td>University of Massachusetts Amherst</td>
+        <td>yes</td>
+        <td></td>
+        <td>11</td>
+        <td>6.52727</td>
+        <td>-0.9732676</td>
+        <td>-0.438787</td>
+        <td>0.0956847</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.4478125</td>
+      </tr>
+      <tr id="LC75" class="js-file-line">
+        <td id="L75" class="blob-num js-line-number" data-line-number="75"></td>
+        <td>74</td>
+        <td>Tulchin Research</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>3.45</td>
+        <td>-1.469343</td>
+        <td>-2.954467</td>
+        <td>0.1055214</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.215575</td>
+      </tr>
+      <tr id="LC76" class="js-file-line">
+        <td id="L76" class="blob-num js-line-number" data-line-number="76"></td>
+        <td>75</td>
+        <td>Mellman Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>20</td>
+        <td>4.87663</td>
+        <td>-0.0443366</td>
+        <td>-0.1641171</td>
+        <td>0.1148004</td>
+        <td>B-</td>
+        <td></td>
+        <td>1.584836</td>
+      </tr>
+      <tr id="LC77" class="js-file-line">
+        <td id="L77" class="blob-num js-line-number" data-line-number="77"></td>
+        <td>76</td>
+        <td>Market Decisions</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>5.16646</td>
+        <td>0.1951553</td>
+        <td>-1.269833</td>
+        <td>0.1171897</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.053358235</td>
+      </tr>
+      <tr id="LC78" class="js-file-line">
+        <td id="L78" class="blob-num js-line-number" data-line-number="78"></td>
+        <td>77</td>
+        <td>Voter/Consumer Research</td>
+        <td>yes</td>
+        <td></td>
+        <td>5</td>
+        <td>5.12766</td>
+        <td>-0.4811013</td>
+        <td>-0.9666312</td>
+        <td>0.1184428</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.434137647</td>
+      </tr>
+      <tr id="LC79" class="js-file-line">
+        <td id="L79" class="blob-num js-line-number" data-line-number="79"></td>
+        <td>78</td>
+        <td>Fabrizio, Lee &amp; Associates</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>0.1</td>
+        <td>-6.302176</td>
+        <td>-5.34975</td>
+        <td>0.1314812</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.003870968</td>
+      </tr>
+      <tr id="LC80" class="js-file-line">
+        <td id="L80" class="blob-num js-line-number" data-line-number="80"></td>
+        <td>79</td>
+        <td>Clarity Campaign Labs</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>0</td>
+        <td>-5.234347</td>
+        <td>-5.33742</td>
+        <td>0.1318789</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.001585484</td>
+      </tr>
+      <tr id="LC81" class="js-file-line">
+        <td id="L81" class="blob-num js-line-number" data-line-number="81"></td>
+        <td>80</td>
+        <td>Market Research Institute, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>9</td>
+        <td>2.93217</td>
+        <td>-2.161794</td>
+        <td>-2.189436</td>
+        <td>0.150149</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.326379231</td>
+      </tr>
+      <tr id="LC82" class="js-file-line">
+        <td id="L82" class="blob-num js-line-number" data-line-number="82"></td>
+        <td>81</td>
+        <td>Ward Research (Honolulu Star-Advertiser)</td>
+        <td>yes</td>
+        <td></td>
+        <td>11</td>
+        <td>6.44727</td>
+        <td>0.6694896</td>
+        <td>-0.221187</td>
+        <td>0.1540652</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.707678293</td>
+      </tr>
+      <tr id="LC83" class="js-file-line">
+        <td id="L83" class="blob-num js-line-number" data-line-number="83"></td>
+        <td>82</td>
+        <td>Knowledge Networks</td>
+        <td></td>
+        <td>yes</td>
+        <td>3</td>
+        <td>4.09333</td>
+        <td>-0.6791392</td>
+        <td>-1.344804</td>
+        <td>0.1554899</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.008387097</td>
+      </tr>
+      <tr id="LC84" class="js-file-line">
+        <td id="L84" class="blob-num js-line-number" data-line-number="84"></td>
+        <td>83</td>
+        <td>Riley Research Associates</td>
+        <td></td>
+        <td></td>
+        <td>7</td>
+        <td>2.65701</td>
+        <td>-2.951931</td>
+        <td>-2.552622</td>
+        <td>0.1873616</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.118893108</td>
+      </tr>
+      <tr id="LC85" class="js-file-line">
+        <td id="L85" class="blob-num js-line-number" data-line-number="85"></td>
+        <td>84</td>
+        <td>Louisville Courier-Journal</td>
+        <td></td>
+        <td></td>
+        <td>10</td>
+        <td>3.29893</td>
+        <td>-1.767705</td>
+        <td>-1.792813</td>
+        <td>0.2003151</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.3157325</td>
+      </tr>
+      <tr id="LC86" class="js-file-line">
+        <td id="L86" class="blob-num js-line-number" data-line-number="86"></td>
+        <td>85</td>
+        <td>St. Cloud State University</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>9</td>
+        <td>6.49156</td>
+        <td>1.120559</td>
+        <td>1.800457</td>
+        <td>0.2103039</td>
+        <td>B-</td>
+        <td></td>
+        <td>0.438244615</td>
+      </tr>
+      <tr id="LC87" class="js-file-line">
+        <td id="L87" class="blob-num js-line-number" data-line-number="87"></td>
+        <td>86</td>
+        <td>QEV Analytics</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>7.3</td>
+        <td>2.303876</td>
+        <td>-2.555583</td>
+        <td>0.2216155</td>
+        <td>B-</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC88" class="js-file-line">
+        <td id="L88" class="blob-num js-line-number" data-line-number="88"></td>
+        <td>87</td>
+        <td>American Viewpoint</td>
+        <td>yes</td>
+        <td></td>
+        <td>5</td>
+        <td>4.64169</td>
+        <td>-0.7839275</td>
+        <td>-0.2284159</td>
+        <td>0.2239021</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.663098571</td>
+      </tr>
+      <tr id="LC89" class="js-file-line">
+        <td id="L89" class="blob-num js-line-number" data-line-number="89"></td>
+        <td>88</td>
+        <td>Orion Strategies</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>3.0729</td>
+        <td>-3.094538</td>
+        <td>-4.003148</td>
+        <td>0.2249454</td>
+        <td>B-</td>
+        <td></td>
+        <td>0.117682727</td>
+      </tr>
+      <tr id="LC90" class="js-file-line">
+        <td id="L90" class="blob-num js-line-number" data-line-number="90"></td>
+        <td>89</td>
+        <td>University of Wisconsin (Badger Poll)</td>
+        <td></td>
+        <td>yes</td>
+        <td>6</td>
+        <td>6.9291</td>
+        <td>1.358832</td>
+        <td>-0.1317245</td>
+        <td>0.2255129</td>
+        <td>B-</td>
+        <td></td>
+        <td>0.17844</td>
+      </tr>
+      <tr id="LC91" class="js-file-line">
+        <td id="L91" class="blob-num js-line-number" data-line-number="91"></td>
+        <td>90</td>
+        <td>Hill Research Consultants</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>5.44517</td>
+        <td>0.2755792</td>
+        <td>-0.3288164</td>
+        <td>0.2278975</td>
+        <td>B-</td>
+        <td></td>
+        <td>-0.371744706</td>
+      </tr>
+      <tr id="LC92" class="js-file-line">
+        <td id="L92" class="blob-num js-line-number" data-line-number="92"></td>
+        <td>91</td>
+        <td>Hampton University</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>3.5</td>
+        <td>-1.617195</td>
+        <td>-1.903697</td>
+        <td>0.2426441</td>
+        <td>B-</td>
+        <td></td>
+        <td>0.112258065</td>
+      </tr>
+      <tr id="LC93" class="js-file-line">
+        <td id="L93" class="blob-num js-line-number" data-line-number="93"></td>
+        <td>92</td>
+        <td>YouGov</td>
+        <td></td>
+        <td></td>
+        <td>230</td>
+        <td>4.34416</td>
+        <td>-0.1896938</td>
+        <td>-0.1912068</td>
+        <td>0.2521661</td>
+        <td>C+</td>
+        <td></td>
+        <td>-1.1927608</td>
+      </tr>
+      <tr id="LC94" class="js-file-line">
+        <td id="L94" class="blob-num js-line-number" data-line-number="94"></td>
+        <td>93</td>
+        <td>Ipsos, online</td>
+        <td></td>
+        <td>yes</td>
+        <td>22</td>
+        <td>4.78153</td>
+        <td>0.605727</td>
+        <td>0.1918897</td>
+        <td>0.2571556</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.48784875</td>
+      </tr>
+      <tr id="LC95" class="js-file-line">
+        <td id="L95" class="blob-num js-line-number" data-line-number="95"></td>
+        <td>94</td>
+        <td>Old Dominion University</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>4.5</td>
+        <td>-1.044349</td>
+        <td>-1.290966</td>
+        <td>0.2624095</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.144516129</td>
+      </tr>
+      <tr id="LC96" class="js-file-line">
+        <td id="L96" class="blob-num js-line-number" data-line-number="96"></td>
+        <td>95</td>
+        <td>Strategic Vision, LLC</td>
+        <td></td>
+        <td></td>
+        <td>129</td>
+        <td>3.97782</td>
+        <td>-0.8386114</td>
+        <td>-0.2212759</td>
+        <td>0.2680261</td>
+        <td>F</td>
+        <td>yes</td>
+        <td>-1.875927206</td>
+      </tr>
+      <tr id="LC97" class="js-file-line">
+        <td id="L97" class="blob-num js-line-number" data-line-number="97"></td>
+        <td>96</td>
+        <td>Dartmouth College</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>9</td>
+        <td>1.160497</td>
+        <td>-0.3194796</td>
+        <td>0.2702081</td>
+        <td>C+</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC98" class="js-file-line">
+        <td id="L98" class="blob-num js-line-number" data-line-number="98"></td>
+        <td>97</td>
+        <td>University of Texas, online</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>0.513795</td>
+        <td>-4.781672</td>
+        <td>-6.881524</td>
+        <td>0.2855527</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.01890825</td>
+      </tr>
+      <tr id="LC99" class="js-file-line">
+        <td id="L99" class="blob-num js-line-number" data-line-number="99"></td>
+        <td>98</td>
+        <td>Belden Russonello &amp; Stewart</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>4.735</td>
+        <td>-0.2275796</td>
+        <td>-0.0294997</td>
+        <td>0.2883319</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.2078125</td>
+      </tr>
+      <tr id="LC100" class="js-file-line">
+        <td id="L100" class="blob-num js-line-number" data-line-number="100"></td>
+        <td>99</td>
+        <td>US News &amp; World Report</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>1.91667</td>
+        <td>-2.804595</td>
+        <td>-4.564485</td>
+        <td>0.2905234</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.076666636</td>
+      </tr>
+      <tr id="LC101" class="js-file-line">
+        <td id="L101" class="blob-num js-line-number" data-line-number="101"></td>
+        <td>100</td>
+        <td>Google Consumer Surveys</td>
+        <td></td>
+        <td></td>
+        <td>12</td>
+        <td>2.22217</td>
+        <td>-0.7644576</td>
+        <td>-1.191504</td>
+        <td>0.2953021</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.628077143</td>
+      </tr>
+      <tr id="LC102" class="js-file-line">
+        <td id="L102" class="blob-num js-line-number" data-line-number="102"></td>
+        <td>101</td>
+        <td>Northern Arizona University</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>3.58198</td>
+        <td>-1.921294</td>
+        <td>-3.373678</td>
+        <td>0.2990007</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.390821176</td>
+      </tr>
+      <tr id="LC103" class="js-file-line">
+        <td id="L103" class="blob-num js-line-number" data-line-number="103"></td>
+        <td>102</td>
+        <td>Capital Survey Research Center</td>
+        <td></td>
+        <td></td>
+        <td>11</td>
+        <td>7.75604</td>
+        <td>0.9212549</td>
+        <td>-1.277544</td>
+        <td>0.2992134</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.066955294</td>
+      </tr>
+      <tr id="LC104" class="js-file-line">
+        <td id="L104" class="blob-num js-line-number" data-line-number="104"></td>
+        <td>103</td>
+        <td>Pharos Research Group</td>
+        <td></td>
+        <td></td>
+        <td>31</td>
+        <td>4.03539</td>
+        <td>-0.7910106</td>
+        <td>-0.5054196</td>
+        <td>0.299225</td>
+        <td>F</td>
+        <td>yes</td>
+        <td>0.870779836</td>
+      </tr>
+      <tr id="LC105" class="js-file-line">
+        <td id="L105" class="blob-num js-line-number" data-line-number="105"></td>
+        <td>104</td>
+        <td>M4 Strategies</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>3.069</td>
+        <td>-0.8060126</td>
+        <td>-6.580567</td>
+        <td>0.3043625</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.193330625</td>
+      </tr>
+      <tr id="LC106" class="js-file-line">
+        <td id="L106" class="blob-num js-line-number" data-line-number="106"></td>
+        <td>105</td>
+        <td>Ethridge &amp; Associates, LLC</td>
+        <td></td>
+        <td></td>
+        <td>6</td>
+        <td>2.67167</td>
+        <td>-2.113496</td>
+        <td>-2.227447</td>
+        <td>0.3071125</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.120277833</td>
+      </tr>
+      <tr id="LC107" class="js-file-line">
+        <td id="L107" class="blob-num js-line-number" data-line-number="107"></td>
+        <td>106</td>
+        <td>Alabama State University</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>6.4</td>
+        <td>-1.972278</td>
+        <td>-3.193412</td>
+        <td>0.3202084</td>
+        <td>C+</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC108" class="js-file-line">
+        <td id="L108" class="blob-num js-line-number" data-line-number="108"></td>
+        <td>107</td>
+        <td>Southern Media &amp; Opinion Research</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>6.4275</td>
+        <td>0.8798206</td>
+        <td>0.4566848</td>
+        <td>0.3203094</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.003125</td>
+      </tr>
+      <tr id="LC109" class="js-file-line">
+        <td id="L109" class="blob-num js-line-number" data-line-number="109"></td>
+        <td>108</td>
+        <td>Fox News/Opinion Dynamics Corp.</td>
+        <td></td>
+        <td>yes</td>
+        <td>34</td>
+        <td>3.91844</td>
+        <td>-0.7015455</td>
+        <td>0.3135287</td>
+        <td>0.3267181</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.473648966</td>
+      </tr>
+      <tr id="LC110" class="js-file-line">
+        <td id="L110" class="blob-num js-line-number" data-line-number="110"></td>
+        <td>109</td>
+        <td>Moore Information</td>
+        <td>yes</td>
+        <td></td>
+        <td>5</td>
+        <td>7.37</td>
+        <td>1.281565</td>
+        <td>0.5338932</td>
+        <td>0.3328034</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.429428571</td>
+      </tr>
+      <tr id="LC111" class="js-file-line">
+        <td id="L111" class="blob-num js-line-number" data-line-number="111"></td>
+        <td>110</td>
+        <td>Public Opinion Strategies</td>
+        <td>yes</td>
+        <td></td>
+        <td>46</td>
+        <td>5.98603</td>
+        <td>0.3693649</td>
+        <td>0.2995673</td>
+        <td>0.3355572</td>
+        <td>C+</td>
+        <td></td>
+        <td>-2.145337105</td>
+      </tr>
+      <tr id="LC112" class="js-file-line">
+        <td id="L112" class="blob-num js-line-number" data-line-number="112"></td>
+        <td>111</td>
+        <td>University Nevada, Las Vegas</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>9</td>
+        <td>1.106303</td>
+        <td>1.071086</td>
+        <td>0.3386047</td>
+        <td>C+</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC113" class="js-file-line">
+        <td id="L113" class="blob-num js-line-number" data-line-number="113"></td>
+        <td>112</td>
+        <td>Tel Opinion Research</td>
+        <td></td>
+        <td></td>
+        <td>10</td>
+        <td>3.22006</td>
+        <td>-1.846831</td>
+        <td>-1.218472</td>
+        <td>0.3439004</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.03276475</td>
+      </tr>
+      <tr id="LC114" class="js-file-line">
+        <td id="L114" class="blob-num js-line-number" data-line-number="114"></td>
+        <td>113</td>
+        <td>NPR</td>
+        <td>yes</td>
+        <td></td>
+        <td>3</td>
+        <td>4.99053</td>
+        <td>0.1308256</td>
+        <td>0.7401082</td>
+        <td>0.3450274</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.087878091</td>
+      </tr>
+      <tr id="LC115" class="js-file-line">
+        <td id="L115" class="blob-num js-line-number" data-line-number="115"></td>
+        <td>114</td>
+        <td>Vanderbilt University</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>8.9</td>
+        <td>0.9037247</td>
+        <td>1.343405</td>
+        <td>0.3473892</td>
+        <td>C+</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC116" class="js-file-line">
+        <td id="L116" class="blob-num js-line-number" data-line-number="116"></td>
+        <td>115</td>
+        <td>Crawford Johnson &amp; Northcott Inc.</td>
+        <td></td>
+        <td></td>
+        <td>5</td>
+        <td>4.64</td>
+        <td>-2.982242</td>
+        <td>-2.350888</td>
+        <td>0.351037</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.104836774</td>
+      </tr>
+      <tr id="LC117" class="js-file-line">
+        <td id="L117" class="blob-num js-line-number" data-line-number="117"></td>
+        <td>116</td>
+        <td>Financial Dynamics</td>
+        <td></td>
+        <td></td>
+        <td>15</td>
+        <td>2.77011</td>
+        <td>-1.821299</td>
+        <td>-0.802034</td>
+        <td>0.3513383</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.659786667</td>
+      </tr>
+      <tr id="LC118" class="js-file-line">
+        <td id="L118" class="blob-num js-line-number" data-line-number="118"></td>
+        <td>117</td>
+        <td>Greenberg Quinlan Rosner (Democracy Corps)</td>
+        <td>yes</td>
+        <td></td>
+        <td>46</td>
+        <td>4.39228</td>
+        <td>-0.4259483</td>
+        <td>0.326216</td>
+        <td>0.3516867</td>
+        <td>C+</td>
+        <td></td>
+        <td>2.33007</td>
+      </tr>
+      <tr id="LC119" class="js-file-line">
+        <td id="L119" class="blob-num js-line-number" data-line-number="119"></td>
+        <td>118</td>
+        <td>Rutgers University</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>13</td>
+        <td>5.68308</td>
+        <td>0.5950887</td>
+        <td>1.901187</td>
+        <td>0.3523566</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.098139419</td>
+      </tr>
+      <tr id="LC120" class="js-file-line">
+        <td id="L120" class="blob-num js-line-number" data-line-number="120"></td>
+        <td>119</td>
+        <td>Glengariff Group, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>5</td>
+        <td>6.07371</td>
+        <td>0.2780705</td>
+        <td>0.6872024</td>
+        <td>0.3547047</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.115353529</td>
+      </tr>
+      <tr id="LC121" class="js-file-line">
+        <td id="L121" class="blob-num js-line-number" data-line-number="121"></td>
+        <td>120</td>
+        <td>CallFire</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>3.93119</td>
+        <td>0.1006862</td>
+        <td>0.7542945</td>
+        <td>0.3553223</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.462492941</td>
+      </tr>
+      <tr id="LC122" class="js-file-line">
+        <td id="L122" class="blob-num js-line-number" data-line-number="122"></td>
+        <td>121</td>
+        <td>University of Georgia</td>
+        <td></td>
+        <td>yes</td>
+        <td>1</td>
+        <td>9.78</td>
+        <td>3.795883</td>
+        <td>1.703379</td>
+        <td>0.3590012</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.315483871</td>
+      </tr>
+      <tr id="LC123" class="js-file-line">
+        <td id="L123" class="blob-num js-line-number" data-line-number="123"></td>
+        <td>122</td>
+        <td>Val Smith</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>8.51322</td>
+        <td>2.572204</td>
+        <td>1.804356</td>
+        <td>0.3622586</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.27462</td>
+      </tr>
+      <tr id="LC124" class="js-file-line">
+        <td id="L124" class="blob-num js-line-number" data-line-number="124"></td>
+        <td>123</td>
+        <td>Fairbank, Maslin, Maullin, Metz &amp; Associates</td>
+        <td>yes</td>
+        <td></td>
+        <td>7</td>
+        <td>5.86817</td>
+        <td>0.3086036</td>
+        <td>0.6649843</td>
+        <td>0.3650785</td>
+        <td>C+</td>
+        <td></td>
+        <td>1.048032432</td>
+      </tr>
+      <tr id="LC125" class="js-file-line">
+        <td id="L125" class="blob-num js-line-number" data-line-number="125"></td>
+        <td>124</td>
+        <td>Christopher Newport University</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>7.1</td>
+        <td>1.80086</td>
+        <td>1.230051</td>
+        <td>0.3670538</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.443125</td>
+      </tr>
+      <tr id="LC126" class="js-file-line">
+        <td id="L126" class="blob-num js-line-number" data-line-number="126"></td>
+        <td>125</td>
+        <td>Iowa State University</td>
+        <td></td>
+        <td>yes</td>
+        <td>1</td>
+        <td>13.1</td>
+        <td>3.901797</td>
+        <td>2.021284</td>
+        <td>0.3692562</td>
+        <td>C+</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC127" class="js-file-line">
+        <td id="L127" class="blob-num js-line-number" data-line-number="127"></td>
+        <td>126</td>
+        <td>Clarus Research Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>3</td>
+        <td>6.76667</td>
+        <td>1.249738</td>
+        <td>1.010662</td>
+        <td>0.3696232</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.505655</td>
+      </tr>
+      <tr id="LC128" class="js-file-line">
+        <td id="L128" class="blob-num js-line-number" data-line-number="128"></td>
+        <td>127</td>
+        <td>University of North Florida</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>5.06</td>
+        <td>-0.1231549</td>
+        <td>1.28046</td>
+        <td>0.3702044</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.31625</td>
+      </tr>
+      <tr id="LC129" class="js-file-line">
+        <td id="L129" class="blob-num js-line-number" data-line-number="129"></td>
+        <td>128</td>
+        <td>Clemson University</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>12.225</td>
+        <td>4.786629</td>
+        <td>0.9229996</td>
+        <td>0.37517</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.538709677</td>
+      </tr>
+      <tr id="LC130" class="js-file-line">
+        <td id="L130" class="blob-num js-line-number" data-line-number="130"></td>
+        <td>129</td>
+        <td>Gallup</td>
+        <td>yes</td>
+        <td>yes</td>
+        <td>80</td>
+        <td>4.27064</td>
+        <td>-0.2980448</td>
+        <td>0.7523382</td>
+        <td>0.3758887</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.836830526</td>
+      </tr>
+      <tr id="LC131" class="js-file-line">
+        <td id="L131" class="blob-num js-line-number" data-line-number="131"></td>
+        <td>130</td>
+        <td>Frederick Polls</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>2.4</td>
+        <td>-4.016191</td>
+        <td>-5.415407</td>
+        <td>0.377185</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.018574484</td>
+      </tr>
+      <tr id="LC132" class="js-file-line">
+        <td id="L132" class="blob-num js-line-number" data-line-number="132"></td>
+        <td>131</td>
+        <td>Potomac Incorporated</td>
+        <td></td>
+        <td></td>
+        <td>8</td>
+        <td>4.5475</td>
+        <td>-1.363904</td>
+        <td>-1.355856</td>
+        <td>0.3772075</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.522778333</td>
+      </tr>
+      <tr id="LC133" class="js-file-line">
+        <td id="L133" class="blob-num js-line-number" data-line-number="133"></td>
+        <td>132</td>
+        <td>KRC/Communications Research</td>
+        <td></td>
+        <td></td>
+        <td>22</td>
+        <td>6.89136</td>
+        <td>0.240648</td>
+        <td>-0.4868463</td>
+        <td>0.3805791</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.194146244</td>
+      </tr>
+      <tr id="LC134" class="js-file-line">
+        <td id="L134" class="blob-num js-line-number" data-line-number="134"></td>
+        <td>133</td>
+        <td>DFM Research</td>
+        <td>yes</td>
+        <td></td>
+        <td>3</td>
+        <td>6.52712</td>
+        <td>0.7847613</td>
+        <td>1.148801</td>
+        <td>0.3821813</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.593374545</td>
+      </tr>
+      <tr id="LC135" class="js-file-line">
+        <td id="L135" class="blob-num js-line-number" data-line-number="135"></td>
+        <td>134</td>
+        <td>Hendrix College</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>3.85</td>
+        <td>-2.232159</td>
+        <td>-2.438336</td>
+        <td>0.4090409</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.452941176</td>
+      </tr>
+      <tr id="LC136" class="js-file-line">
+        <td id="L136" class="blob-num js-line-number" data-line-number="136"></td>
+        <td>135</td>
+        <td>Frank N. Magid Associates, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>4.635</td>
+        <td>-1.081432</td>
+        <td>-2.318331</td>
+        <td>0.4231592</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.545294118</td>
+      </tr>
+      <tr id="LC137" class="js-file-line">
+        <td id="L137" class="blob-num js-line-number" data-line-number="137"></td>
+        <td>136</td>
+        <td>Howey Politics/DePauw University</td>
+        <td>yes</td>
+        <td></td>
+        <td>7</td>
+        <td>6.79507</td>
+        <td>1.494328</td>
+        <td>0.9872891</td>
+        <td>0.4260551</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.095114833</td>
+      </tr>
+      <tr id="LC138" class="js-file-line">
+        <td id="L138" class="blob-num js-line-number" data-line-number="138"></td>
+        <td>137</td>
+        <td>George Washington University (Battleground)</td>
+        <td>yes</td>
+        <td></td>
+        <td>32</td>
+        <td>3.47926</td>
+        <td>-0.6525154</td>
+        <td>0.5146411</td>
+        <td>0.4274761</td>
+        <td>C+</td>
+        <td></td>
+        <td>-1.000578065</td>
+      </tr>
+      <tr id="LC139" class="js-file-line">
+        <td id="L139" class="blob-num js-line-number" data-line-number="139"></td>
+        <td>138</td>
+        <td>Penn Schoen Berland</td>
+        <td>yes</td>
+        <td></td>
+        <td>18</td>
+        <td>7.58802</td>
+        <td>1.517992</td>
+        <td>0.6583669</td>
+        <td>0.4326209</td>
+        <td>C+</td>
+        <td></td>
+        <td>2.5288425</td>
+      </tr>
+      <tr id="LC140" class="js-file-line">
+        <td id="L140" class="blob-num js-line-number" data-line-number="140"></td>
+        <td>139</td>
+        <td>Feldman Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>10.8045</td>
+        <td>5.17773</td>
+        <td>4.05348</td>
+        <td>0.4348109</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.348532258</td>
+      </tr>
+      <tr id="LC141" class="js-file-line">
+        <td id="L141" class="blob-num js-line-number" data-line-number="141"></td>
+        <td>140</td>
+        <td>Ayres, McHenry &amp; Associates</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>7.03</td>
+        <td>1.652465</td>
+        <td>2.405076</td>
+        <td>0.4404928</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.439375</td>
+      </tr>
+      <tr id="LC142" class="js-file-line">
+        <td id="L142" class="blob-num js-line-number" data-line-number="142"></td>
+        <td>141</td>
+        <td>Schroth, Eldon &amp; Associates</td>
+        <td></td>
+        <td></td>
+        <td>8</td>
+        <td>3.15025</td>
+        <td>-2.383767</td>
+        <td>-1.051392</td>
+        <td>0.4413052</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.55839</td>
+      </tr>
+      <tr id="LC143" class="js-file-line">
+        <td id="L143" class="blob-num js-line-number" data-line-number="143"></td>
+        <td>142</td>
+        <td>MSR Group</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>3.46884</td>
+        <td>-2.310163</td>
+        <td>-2.895047</td>
+        <td>0.4422906</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.315349091</td>
+      </tr>
+      <tr id="LC144" class="js-file-line">
+        <td id="L144" class="blob-num js-line-number" data-line-number="144"></td>
+        <td>143</td>
+        <td>Marshall Marketing &amp; Communications</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>2.78508</td>
+        <td>-3.220156</td>
+        <td>-2.140388</td>
+        <td>0.4440936</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.199940909</td>
+      </tr>
+      <tr id="LC145" class="js-file-line">
+        <td id="L145" class="blob-num js-line-number" data-line-number="145"></td>
+        <td>144</td>
+        <td>Louis Harris &amp; Associates</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>0.9</td>
+        <td>-3.926535</td>
+        <td>-4.328587</td>
+        <td>0.4451112</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.05625</td>
+      </tr>
+      <tr id="LC146" class="js-file-line">
+        <td id="L146" class="blob-num js-line-number" data-line-number="146"></td>
+        <td>145</td>
+        <td>Bennett Petts &amp; Blumenthal</td>
+        <td></td>
+        <td></td>
+        <td>9</td>
+        <td>5.67007</td>
+        <td>-0.3151446</td>
+        <td>-0.9018966</td>
+        <td>0.4472735</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.346435385</td>
+      </tr>
+      <tr id="LC147" class="js-file-line">
+        <td id="L147" class="blob-num js-line-number" data-line-number="147"></td>
+        <td>146</td>
+        <td>Temple University</td>
+        <td></td>
+        <td></td>
+        <td>6</td>
+        <td>3.66042</td>
+        <td>-1.538074</td>
+        <td>-1.376834</td>
+        <td>0.4488814</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.353215714</td>
+      </tr>
+      <tr id="LC148" class="js-file-line">
+        <td id="L148" class="blob-num js-line-number" data-line-number="148"></td>
+        <td>147</td>
+        <td>Magellan Strategies</td>
+        <td></td>
+        <td>yes</td>
+        <td>6</td>
+        <td>7.93333</td>
+        <td>2.702724</td>
+        <td>1.217713</td>
+        <td>0.4504192</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.606376471</td>
+      </tr>
+      <tr id="LC149" class="js-file-line">
+        <td id="L149" class="blob-num js-line-number" data-line-number="149"></td>
+        <td>148</td>
+        <td>Landmark Communications</td>
+        <td></td>
+        <td></td>
+        <td>10</td>
+        <td>4.47</td>
+        <td>-0.7318165</td>
+        <td>-0.7868554</td>
+        <td>0.4518045</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.594677895</td>
+      </tr>
+      <tr id="LC150" class="js-file-line">
+        <td id="L150" class="blob-num js-line-number" data-line-number="150"></td>
+        <td>149</td>
+        <td>Scripps Howard</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>3.785</td>
+        <td>-0.9500585</td>
+        <td>-2.062868</td>
+        <td>0.4532136</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.065294118</td>
+      </tr>
+      <tr id="LC151" class="js-file-line">
+        <td id="L151" class="blob-num js-line-number" data-line-number="151"></td>
+        <td>150</td>
+        <td>IVR Polls</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>4.05</td>
+        <td>-3.40101</td>
+        <td>-2.000147</td>
+        <td>0.4605925</td>
+        <td>C+</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC152" class="js-file-line">
+        <td id="L152" class="blob-num js-line-number" data-line-number="152"></td>
+        <td>151</td>
+        <td>Talmey-Drake Research &amp; Strategy, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>9</td>
+        <td>7.67667</td>
+        <td>2.069782</td>
+        <td>1.036074</td>
+        <td>0.4642026</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.407949231</td>
+      </tr>
+      <tr id="LC153" class="js-file-line">
+        <td id="L153" class="blob-num js-line-number" data-line-number="153"></td>
+        <td>152</td>
+        <td>Polling Company/Global Strategy Group (Hotline Bullseye)</td>
+        <td></td>
+        <td>yes</td>
+        <td>3</td>
+        <td>4.55948</td>
+        <td>1.044098</td>
+        <td>2.054852</td>
+        <td>0.4645497</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.414498182</td>
+      </tr>
+      <tr id="LC154" class="js-file-line">
+        <td id="L154" class="blob-num js-line-number" data-line-number="154"></td>
+        <td>153</td>
+        <td>Emerson College</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>0.35</td>
+        <td>-4.158307</td>
+        <td>-3.870154</td>
+        <td>0.4737633</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.0225</td>
+      </tr>
+      <tr id="LC155" class="js-file-line">
+        <td id="L155" class="blob-num js-line-number" data-line-number="155"></td>
+        <td>154</td>
+        <td>RAND (American Life Panel)</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>1.23553</td>
+        <td>-1.671942</td>
+        <td>-2.473647</td>
+        <td>0.4805997</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.038781909</td>
+      </tr>
+      <tr id="LC156" class="js-file-line">
+        <td id="L156" class="blob-num js-line-number" data-line-number="156"></td>
+        <td>155</td>
+        <td>Inside Michigan Politics</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>13.2</td>
+        <td>5.310338</td>
+        <td>5.497832</td>
+        <td>0.4814028</td>
+        <td>C+</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC157" class="js-file-line">
+        <td id="L157" class="blob-num js-line-number" data-line-number="157"></td>
+        <td>156</td>
+        <td>Research 2000</td>
+        <td></td>
+        <td></td>
+        <td>279</td>
+        <td>5.53938</td>
+        <td>0.1771807</td>
+        <td>0.0859184</td>
+        <td>0.4923365</td>
+        <td>F</td>
+        <td>yes</td>
+        <td>1.389753971</td>
+      </tr>
+      <tr id="LC158" class="js-file-line">
+        <td id="L158" class="blob-num js-line-number" data-line-number="158"></td>
+        <td>157</td>
+        <td>Florida International University/Univision</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1.80155</td>
+        <td>-4.466281</td>
+        <td>-6.939324</td>
+        <td>0.5026264</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.058114516</td>
+      </tr>
+      <tr id="LC159" class="js-file-line">
+        <td id="L159" class="blob-num js-line-number" data-line-number="159"></td>
+        <td>158</td>
+        <td>International Communications Research, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>5</td>
+        <td>3.12814</td>
+        <td>-0.7920479</td>
+        <td>-1.258139</td>
+        <td>0.507144</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.071409143</td>
+      </tr>
+      <tr id="LC160" class="js-file-line">
+        <td id="L160" class="blob-num js-line-number" data-line-number="160"></td>
+        <td>159</td>
+        <td>Global Strategy Group</td>
+        <td></td>
+        <td></td>
+        <td>18</td>
+        <td>5.50569</td>
+        <td>-0.1491114</td>
+        <td>-0.231692</td>
+        <td>0.5168808</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.99638625</td>
+      </tr>
+      <tr id="LC161" class="js-file-line">
+        <td id="L161" class="blob-num js-line-number" data-line-number="161"></td>
+        <td>160</td>
+        <td>Commonwealth Foundation</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>4.13</td>
+        <td>-0.9911127</td>
+        <td>-3.176505</td>
+        <td>0.5171164</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.258125</td>
+      </tr>
+      <tr id="LC162" class="js-file-line">
+        <td id="L162" class="blob-num js-line-number" data-line-number="162"></td>
+        <td>161</td>
+        <td>Harper Polling</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>0.95</td>
+        <td>-3.987683</td>
+        <td>-3.129007</td>
+        <td>0.520085</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.0596875</td>
+      </tr>
+      <tr id="LC163" class="js-file-line">
+        <td id="L163" class="blob-num js-line-number" data-line-number="163"></td>
+        <td>162</td>
+        <td>Philadelphia Inquirer</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>2.99004</td>
+        <td>-1.845511</td>
+        <td>-1.44281</td>
+        <td>0.5261616</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.314134118</td>
+      </tr>
+      <tr id="LC164" class="js-file-line">
+        <td id="L164" class="blob-num js-line-number" data-line-number="164"></td>
+        <td>163</td>
+        <td>Missouri State University</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>4.36667</td>
+        <td>-1.88062</td>
+        <td>-1.966961</td>
+        <td>0.5266621</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.372810909</td>
+      </tr>
+      <tr id="LC165" class="js-file-line">
+        <td id="L165" class="blob-num js-line-number" data-line-number="165"></td>
+        <td>164</td>
+        <td>Baselice &amp; Associates, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>9.98</td>
+        <td>4.139538</td>
+        <td>3.822816</td>
+        <td>0.5291016</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.224193548</td>
+      </tr>
+      <tr id="LC166" class="js-file-line">
+        <td id="L166" class="blob-num js-line-number" data-line-number="166"></td>
+        <td>165</td>
+        <td>Lauer Johnson Research</td>
+        <td>yes</td>
+        <td></td>
+        <td>1</td>
+        <td>13.8117</td>
+        <td>8.079887</td>
+        <td>7.160567</td>
+        <td>0.5350394</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.44553871</td>
+      </tr>
+      <tr id="LC167" class="js-file-line">
+        <td id="L167" class="blob-num js-line-number" data-line-number="167"></td>
+        <td>166</td>
+        <td>University Massachusetts Lowell</td>
+        <td>yes</td>
+        <td></td>
+        <td>3</td>
+        <td>7.14961</td>
+        <td>2.661777</td>
+        <td>2.8403</td>
+        <td>0.5359541</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.057519455</td>
+      </tr>
+      <tr id="LC168" class="js-file-line">
+        <td id="L168" class="blob-num js-line-number" data-line-number="168"></td>
+        <td>167</td>
+        <td>Market Research Insight</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>2.405</td>
+        <td>-2.115556</td>
+        <td>-2.860662</td>
+        <td>0.5368566</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.016129032</td>
+      </tr>
+      <tr id="LC169" class="js-file-line">
+        <td id="L169" class="blob-num js-line-number" data-line-number="169"></td>
+        <td>168</td>
+        <td>University Wisconsin—Milwaukee</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>5.28333</td>
+        <td>-1.061269</td>
+        <td>-1.83526</td>
+        <td>0.5386349</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.480302727</td>
+      </tr>
+      <tr id="LC170" class="js-file-line">
+        <td id="L170" class="blob-num js-line-number" data-line-number="170"></td>
+        <td>169</td>
+        <td>Braun Research</td>
+        <td>yes</td>
+        <td></td>
+        <td>3</td>
+        <td>9.13333</td>
+        <td>3.709552</td>
+        <td>2.873105</td>
+        <td>0.5389363</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.828442727</td>
+      </tr>
+      <tr id="LC171" class="js-file-line">
+        <td id="L171" class="blob-num js-line-number" data-line-number="171"></td>
+        <td>170</td>
+        <td>Harris Interactive, telephone</td>
+        <td></td>
+        <td>yes</td>
+        <td>9</td>
+        <td>5.72951</td>
+        <td>1.699402</td>
+        <td>1.368893</td>
+        <td>0.541007</td>
+        <td>C+</td>
+        <td></td>
+        <td>0.461681538</td>
+      </tr>
+      <tr id="LC172" class="js-file-line">
+        <td id="L172" class="blob-num js-line-number" data-line-number="172"></td>
+        <td>171</td>
+        <td>Personal Marketing Research</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>6.17667</td>
+        <td>-2.125855</td>
+        <td>-1.7919</td>
+        <td>0.5425767</td>
+        <td>C+</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC173" class="js-file-line">
+        <td id="L173" class="blob-num js-line-number" data-line-number="173"></td>
+        <td>172</td>
+        <td>University of Tennessee</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2.73</td>
+        <td>-1.768913</td>
+        <td>-5.608106</td>
+        <td>0.5455688</td>
+        <td>C+</td>
+        <td></td>
+        <td>-0.088064516</td>
+      </tr>
+      <tr id="LC174" class="js-file-line">
+        <td id="L174" class="blob-num js-line-number" data-line-number="174"></td>
+        <td>173</td>
+        <td>Hellenthal &amp; Associates</td>
+        <td>yes</td>
+        <td></td>
+        <td>2</td>
+        <td>9.3</td>
+        <td>3.184965</td>
+        <td>4.244407</td>
+        <td>0.555451</td>
+        <td>C</td>
+        <td></td>
+        <td>0.261290323</td>
+      </tr>
+      <tr id="LC175" class="js-file-line">
+        <td id="L175" class="blob-num js-line-number" data-line-number="175"></td>
+        <td>174</td>
+        <td>Market Strategies International</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1.1</td>
+        <td>-4.546217</td>
+        <td>-5.281423</td>
+        <td>0.556107</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.035483871</td>
+      </tr>
+      <tr id="LC176" class="js-file-line">
+        <td id="L176" class="blob-num js-line-number" data-line-number="176"></td>
+        <td>175</td>
+        <td>Political Marketing International, Inc./Red Racing Horses</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>4.45</td>
+        <td>-1.025291</td>
+        <td>-2.538374</td>
+        <td>0.5569996</td>
+        <td>C</td>
+        <td></td>
+        <td>0.2721875</td>
+      </tr>
+      <tr id="LC177" class="js-file-line">
+        <td id="L177" class="blob-num js-line-number" data-line-number="177"></td>
+        <td>176</td>
+        <td>RMS Research</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>0.92</td>
+        <td>-5.298794</td>
+        <td>-5.242818</td>
+        <td>0.5573523</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.029677419</td>
+      </tr>
+      <tr id="LC178" class="js-file-line">
+        <td id="L178" class="blob-num js-line-number" data-line-number="178"></td>
+        <td>177</td>
+        <td>Richmond Times-Dispatch</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>3.3025</td>
+        <td>-1.15347</td>
+        <td>-1.172544</td>
+        <td>0.5579576</td>
+        <td>C</td>
+        <td></td>
+        <td>0.341470588</td>
+      </tr>
+      <tr id="LC179" class="js-file-line">
+        <td id="L179" class="blob-num js-line-number" data-line-number="179"></td>
+        <td>178</td>
+        <td>Canisius College</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>0.1</td>
+        <td>-8.342331</td>
+        <td>-5.10207</td>
+        <td>0.5618926</td>
+        <td>C</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC180" class="js-file-line">
+        <td id="L180" class="blob-num js-line-number" data-line-number="180"></td>
+        <td>179</td>
+        <td>Dynamic Marketing, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>3.01</td>
+        <td>-3.071677</td>
+        <td>-5.096332</td>
+        <td>0.5620776</td>
+        <td>C</td>
+        <td></td>
+        <td>0.097096774</td>
+      </tr>
+      <tr id="LC181" class="js-file-line">
+        <td id="L181" class="blob-num js-line-number" data-line-number="181"></td>
+        <td>180</td>
+        <td>Ivan Moore Research</td>
+        <td>yes</td>
+        <td></td>
+        <td>3</td>
+        <td>9.57746</td>
+        <td>4.120615</td>
+        <td>3.171057</td>
+        <td>0.5660229</td>
+        <td>C</td>
+        <td></td>
+        <td>0.870678182</td>
+      </tr>
+      <tr id="LC182" class="js-file-line">
+        <td id="L182" class="blob-num js-line-number" data-line-number="182"></td>
+        <td>181</td>
+        <td>Forward Strategies</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>1.3</td>
+        <td>-3.425973</td>
+        <td>-2.371669</td>
+        <td>0.5674186</td>
+        <td>C</td>
+        <td></td>
+        <td>0.0814275</td>
+      </tr>
+      <tr id="LC183" class="js-file-line">
+        <td id="L183" class="blob-num js-line-number" data-line-number="183"></td>
+        <td>182</td>
+        <td>Market Solutions Group</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>4.3475</td>
+        <td>-1.43913</td>
+        <td>-1.054745</td>
+        <td>0.5718163</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.0078125</td>
+      </tr>
+      <tr id="LC184" class="js-file-line">
+        <td id="L184" class="blob-num js-line-number" data-line-number="184"></td>
+        <td>183</td>
+        <td>University of Texas, telephone</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>1.87612</td>
+        <td>-3.23152</td>
+        <td>-2.197837</td>
+        <td>0.5782831</td>
+        <td>C</td>
+        <td></td>
+        <td>0.1172575</td>
+      </tr>
+      <tr id="LC185" class="js-file-line">
+        <td id="L185" class="blob-num js-line-number" data-line-number="185"></td>
+        <td>184</td>
+        <td>OnPoint</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>1.6525</td>
+        <td>-2.572605</td>
+        <td>-0.9427637</td>
+        <td>0.5849906</td>
+        <td>C</td>
+        <td></td>
+        <td>0.192647059</td>
+      </tr>
+      <tr id="LC186" class="js-file-line">
+        <td id="L186" class="blob-num js-line-number" data-line-number="186"></td>
+        <td>185</td>
+        <td>Lauer Lalley Victoria, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1.7</td>
+        <td>-4.526998</td>
+        <td>-4.205868</td>
+        <td>0.5908023</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.05483871</td>
+      </tr>
+      <tr id="LC187" class="js-file-line">
+        <td id="L187" class="blob-num js-line-number" data-line-number="187"></td>
+        <td>186</td>
+        <td>Mitchell Research &amp; Communications</td>
+        <td></td>
+        <td></td>
+        <td>30</td>
+        <td>5.31574</td>
+        <td>-0.38658</td>
+        <td>0.0678467</td>
+        <td>0.5929356</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.2892855</td>
+      </tr>
+      <tr id="LC188" class="js-file-line">
+        <td id="L188" class="blob-num js-line-number" data-line-number="188"></td>
+        <td>187</td>
+        <td>Columbus Dispatch</td>
+        <td></td>
+        <td>yes</td>
+        <td>17</td>
+        <td>5.0629</td>
+        <td>0.5991047</td>
+        <td>1.121553</td>
+        <td>0.5943983</td>
+        <td>C</td>
+        <td></td>
+        <td>1.115784091</td>
+      </tr>
+      <tr id="LC189" class="js-file-line">
+        <td id="L189" class="blob-num js-line-number" data-line-number="189"></td>
+        <td>188</td>
+        <td>Wirthlin Worldwide</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>4.55983</td>
+        <td>-1.028679</td>
+        <td>-0.8555689</td>
+        <td>0.5952488</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.45998</td>
+      </tr>
+      <tr id="LC190" class="js-file-line">
+        <td id="L190" class="blob-num js-line-number" data-line-number="190"></td>
+        <td>189</td>
+        <td>Cranford &amp; Associates</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2.5</td>
+        <td>-3.129761</td>
+        <td>-4.00372</td>
+        <td>0.5973232</td>
+        <td>C</td>
+        <td></td>
+        <td>0.079450323</td>
+      </tr>
+      <tr id="LC191" class="js-file-line">
+        <td id="L191" class="blob-num js-line-number" data-line-number="191"></td>
+        <td>190</td>
+        <td>Kiley &amp; Company</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>5.1</td>
+        <td>-0.6141022</td>
+        <td>-1.76095</td>
+        <td>0.6055886</td>
+        <td>C</td>
+        <td></td>
+        <td>0.21248125</td>
+      </tr>
+      <tr id="LC192" class="js-file-line">
+        <td id="L192" class="blob-num js-line-number" data-line-number="192"></td>
+        <td>191</td>
+        <td>Dittman Research</td>
+        <td></td>
+        <td></td>
+        <td>9</td>
+        <td>5.9039</td>
+        <td>0.4797104</td>
+        <td>-0.2005344</td>
+        <td>0.6091263</td>
+        <td>C</td>
+        <td></td>
+        <td>1.011238333</td>
+      </tr>
+      <tr id="LC193" class="js-file-line">
+        <td id="L193" class="blob-num js-line-number" data-line-number="193"></td>
+        <td>192</td>
+        <td>Cooper &amp; Secrest</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2.64</td>
+        <td>-3.489975</td>
+        <td>-3.637771</td>
+        <td>0.609128</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.08516129</td>
+      </tr>
+      <tr id="LC194" class="js-file-line">
+        <td id="L194" class="blob-num js-line-number" data-line-number="194"></td>
+        <td>193</td>
+        <td>Gravis Marketing</td>
+        <td>Sometimes</td>
+        <td></td>
+        <td>20</td>
+        <td>3.85297</td>
+        <td>-0.0363797</td>
+        <td>0.5584748</td>
+        <td>0.6110209</td>
+        <td>C</td>
+        <td></td>
+        <td>-1.40046</td>
+      </tr>
+      <tr id="LC195" class="js-file-line">
+        <td id="L195" class="blob-num js-line-number" data-line-number="195"></td>
+        <td>194</td>
+        <td>Winston Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>6.33659</td>
+        <td>0.0399923</td>
+        <td>-3.578213</td>
+        <td>0.6110492</td>
+        <td>C</td>
+        <td></td>
+        <td>0.204406129</td>
+      </tr>
+      <tr id="LC196" class="js-file-line">
+        <td id="L196" class="blob-num js-line-number" data-line-number="196"></td>
+        <td>195</td>
+        <td>Wood Communications Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>0.8</td>
+        <td>-4.622994</td>
+        <td>-3.432017</td>
+        <td>0.6157652</td>
+        <td>C</td>
+        <td></td>
+        <td>0.027020387</td>
+      </tr>
+      <tr id="LC197" class="js-file-line">
+        <td id="L197" class="blob-num js-line-number" data-line-number="197"></td>
+        <td>196</td>
+        <td>BIGresearch</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1.99</td>
+        <td>-2.204932</td>
+        <td>-3.421482</td>
+        <td>0.616105</td>
+        <td>C</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC198" class="js-file-line">
+        <td id="L198" class="blob-num js-line-number" data-line-number="198"></td>
+        <td>197</td>
+        <td>Manhattanville College</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>6.54667</td>
+        <td>0.0898298</td>
+        <td>-0.9746506</td>
+        <td>0.6168721</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.51375</td>
+      </tr>
+      <tr id="LC199" class="js-file-line">
+        <td id="L199" class="blob-num js-line-number" data-line-number="199"></td>
+        <td>198</td>
+        <td>Vox Populi Communications</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>3.52</td>
+        <td>-3.986717</td>
+        <td>-3.395749</td>
+        <td>0.6169351</td>
+        <td>C</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC200" class="js-file-line">
+        <td id="L200" class="blob-num js-line-number" data-line-number="200"></td>
+        <td>199</td>
+        <td>Middle Tennessee State University</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>6.67213</td>
+        <td>0.022604</td>
+        <td>-0.9026227</td>
+        <td>0.6234202</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.25410625</td>
+      </tr>
+      <tr id="LC201" class="js-file-line">
+        <td id="L201" class="blob-num js-line-number" data-line-number="201"></td>
+        <td>200</td>
+        <td>Central Surveys, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1.67</td>
+        <td>-2.921535</td>
+        <td>-3.09515</td>
+        <td>0.6266319</td>
+        <td>C</td>
+        <td></td>
+        <td>0.053870968</td>
+      </tr>
+      <tr id="LC202" class="js-file-line">
+        <td id="L202" class="blob-num js-line-number" data-line-number="202"></td>
+        <td>201</td>
+        <td>Dan Jones &amp; Associates</td>
+        <td></td>
+        <td></td>
+        <td>28</td>
+        <td>6.58196</td>
+        <td>1.130107</td>
+        <td>0.1353032</td>
+        <td>0.6305039</td>
+        <td>C</td>
+        <td></td>
+        <td>0.975167143</td>
+      </tr>
+      <tr id="LC203" class="js-file-line">
+        <td id="L203" class="blob-num js-line-number" data-line-number="203"></td>
+        <td>202</td>
+        <td>University of North Carolina</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1.6</td>
+        <td>-3.546228</td>
+        <td>-2.790593</td>
+        <td>0.6364563</td>
+        <td>C</td>
+        <td></td>
+        <td>0.051612903</td>
+      </tr>
+      <tr id="LC204" class="js-file-line">
+        <td id="L204" class="blob-num js-line-number" data-line-number="204"></td>
+        <td>203</td>
+        <td>Purple Strategies</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>3.01606</td>
+        <td>-0.9413388</td>
+        <td>-0.4941362</td>
+        <td>0.6377703</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.354830588</td>
+      </tr>
+      <tr id="LC205" class="js-file-line">
+        <td id="L205" class="blob-num js-line-number" data-line-number="205"></td>
+        <td>204</td>
+        <td>OnMessage Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>6</td>
+        <td>9.11667</td>
+        <td>3.293427</td>
+        <td>2.353444</td>
+        <td>0.6397077</td>
+        <td>C</td>
+        <td></td>
+        <td>-1.097991667</td>
+      </tr>
+      <tr id="LC206" class="js-file-line">
+        <td id="L206" class="blob-num js-line-number" data-line-number="206"></td>
+        <td>205</td>
+        <td>Aspen Media &amp; Market Research</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>3.47665</td>
+        <td>-2.325788</td>
+        <td>-2.604734</td>
+        <td>0.6424517</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.11215</td>
+      </tr>
+      <tr id="LC207" class="js-file-line">
+        <td id="L207" class="blob-num js-line-number" data-line-number="207"></td>
+        <td>206</td>
+        <td>Multi Quest International Inc</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1.87</td>
+        <td>-2.492458</td>
+        <td>-2.537294</td>
+        <td>0.6446272</td>
+        <td>C</td>
+        <td></td>
+        <td>0.060322581</td>
+      </tr>
+      <tr id="LC208" class="js-file-line">
+        <td id="L208" class="blob-num js-line-number" data-line-number="208"></td>
+        <td>207</td>
+        <td>StPetePolls.org</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1.9</td>
+        <td>-3.077178</td>
+        <td>-2.488069</td>
+        <td>0.6462151</td>
+        <td>C</td>
+        <td></td>
+        <td>0.060645161</td>
+      </tr>
+      <tr id="LC209" class="js-file-line">
+        <td id="L209" class="blob-num js-line-number" data-line-number="209"></td>
+        <td>208</td>
+        <td>Rivercity Polling</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>6.7</td>
+        <td>0.13727</td>
+        <td>-2.312878</td>
+        <td>0.6518664</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.216129032</td>
+      </tr>
+      <tr id="LC210" class="js-file-line">
+        <td id="L210" class="blob-num js-line-number" data-line-number="210"></td>
+        <td>209</td>
+        <td>Arizona State University</td>
+        <td>yes</td>
+        <td></td>
+        <td>8</td>
+        <td>7.95625</td>
+        <td>2.076441</td>
+        <td>2.000037</td>
+        <td>0.6529067</td>
+        <td>C</td>
+        <td></td>
+        <td>0.914166667</td>
+      </tr>
+      <tr id="LC211" class="js-file-line">
+        <td id="L211" class="blob-num js-line-number" data-line-number="211"></td>
+        <td>210</td>
+        <td>Texas Credit Union League</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>6.95</td>
+        <td>-2.023176</td>
+        <td>-0.9787912</td>
+        <td>0.6544735</td>
+        <td>C</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC212" class="js-file-line">
+        <td id="L212" class="blob-num js-line-number" data-line-number="212"></td>
+        <td>211</td>
+        <td>Red Sea Communications</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>4.37</td>
+        <td>-1.866905</td>
+        <td>-2.197546</td>
+        <td>0.6555868</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.140967742</td>
+      </tr>
+      <tr id="LC213" class="js-file-line">
+        <td id="L213" class="blob-num js-line-number" data-line-number="213"></td>
+        <td>212</td>
+        <td>New Mexico State University</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>6.8</td>
+        <td>-2.340663</td>
+        <td>-2.190141</td>
+        <td>0.6558257</td>
+        <td>C</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC214" class="js-file-line">
+        <td id="L214" class="blob-num js-line-number" data-line-number="214"></td>
+        <td>213</td>
+        <td>Zogby Analytics, telephone</td>
+        <td></td>
+        <td></td>
+        <td>376</td>
+        <td>5.41958</td>
+        <td>0.2271326</td>
+        <td>0.2712898</td>
+        <td>0.6576988</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.528834039</td>
+      </tr>
+      <tr id="LC215" class="js-file-line">
+        <td id="L215" class="blob-num js-line-number" data-line-number="215"></td>
+        <td>214</td>
+        <td>Diversified Research Inc</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>4.99</td>
+        <td>-1.66925</td>
+        <td>-2.022158</td>
+        <td>0.6612445</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.160967742</td>
+      </tr>
+      <tr id="LC216" class="js-file-line">
+        <td id="L216" class="blob-num js-line-number" data-line-number="216"></td>
+        <td>215</td>
+        <td>Gordon S. Black Corp.</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>6.335</td>
+        <td>1.074714</td>
+        <td>-0.8323388</td>
+        <td>0.6636268</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.3959375</td>
+      </tr>
+      <tr id="LC217" class="js-file-line">
+        <td id="L217" class="blob-num js-line-number" data-line-number="217"></td>
+        <td>216</td>
+        <td>Rhode Island College</td>
+        <td></td>
+        <td></td>
+        <td>5</td>
+        <td>6.076</td>
+        <td>0.2058823</td>
+        <td>-0.162224</td>
+        <td>0.6637033</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.18</td>
+      </tr>
+      <tr id="LC218" class="js-file-line">
+        <td id="L218" class="blob-num js-line-number" data-line-number="218"></td>
+        <td>217</td>
+        <td>West Chester University</td>
+        <td></td>
+        <td></td>
+        <td>7</td>
+        <td>5.19</td>
+        <td>0.0184795</td>
+        <td>-0.0338683</td>
+        <td>0.6638826</td>
+        <td>C</td>
+        <td></td>
+        <td>0.185675757</td>
+      </tr>
+      <tr id="LC219" class="js-file-line">
+        <td id="L219" class="blob-num js-line-number" data-line-number="219"></td>
+        <td>218</td>
+        <td>Hays Research Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>7</td>
+        <td>7.67975</td>
+        <td>2.74637</td>
+        <td>2.270381</td>
+        <td>0.6688023</td>
+        <td>C</td>
+        <td></td>
+        <td>1.083581818</td>
+      </tr>
+      <tr id="LC220" class="js-file-line">
+        <td id="L220" class="blob-num js-line-number" data-line-number="220"></td>
+        <td>219</td>
+        <td>Jim Meader (KELOLAND-TV)</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>4.58</td>
+        <td>-0.7803838</td>
+        <td>-0.2232588</td>
+        <td>0.6696382</td>
+        <td>C</td>
+        <td></td>
+        <td>0.538823529</td>
+      </tr>
+      <tr id="LC221" class="js-file-line">
+        <td id="L221" class="blob-num js-line-number" data-line-number="221"></td>
+        <td>220</td>
+        <td>Susquehanna Polling &amp; Research, Inc.</td>
+        <td>Sometimes</td>
+        <td></td>
+        <td>27</td>
+        <td>5.37229</td>
+        <td>0.1871978</td>
+        <td>0.639451</td>
+        <td>0.6708711</td>
+        <td>C</td>
+        <td></td>
+        <td>0.207695654</td>
+      </tr>
+      <tr id="LC222" class="js-file-line">
+        <td id="L222" class="blob-num js-line-number" data-line-number="222"></td>
+        <td>221</td>
+        <td>Wiese Research Associates, Inc.</td>
+        <td>yes</td>
+        <td></td>
+        <td>7</td>
+        <td>8.78227</td>
+        <td>3.022043</td>
+        <td>2.283034</td>
+        <td>0.671196</td>
+        <td>C</td>
+        <td></td>
+        <td>1.297005405</td>
+      </tr>
+      <tr id="LC223" class="js-file-line">
+        <td id="L223" class="blob-num js-line-number" data-line-number="223"></td>
+        <td>222</td>
+        <td>CVOTER International</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>2.8566</td>
+        <td>-0.2198558</td>
+        <td>-0.3452259</td>
+        <td>0.6740926</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.259690909</td>
+      </tr>
+      <tr id="LC224" class="js-file-line">
+        <td id="L224" class="blob-num js-line-number" data-line-number="224"></td>
+        <td>223</td>
+        <td>McLaughlin &amp; Associates</td>
+        <td>yes</td>
+        <td></td>
+        <td>19</td>
+        <td>5.67725</td>
+        <td>0.4208258</td>
+        <td>1.270281</td>
+        <td>0.6755374</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.455577347</td>
+      </tr>
+      <tr id="LC225" class="js-file-line">
+        <td id="L225" class="blob-num js-line-number" data-line-number="225"></td>
+        <td>224</td>
+        <td>Neighborhood Research Corporation</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>3.43</td>
+        <td>-2.23207</td>
+        <td>-1.517648</td>
+        <td>0.677519</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.110645161</td>
+      </tr>
+      <tr id="LC226" class="js-file-line">
+        <td id="L226" class="blob-num js-line-number" data-line-number="226"></td>
+        <td>225</td>
+        <td>Iona College</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>4.4</td>
+        <td>-1.109258</td>
+        <td>-1.457228</td>
+        <td>0.679468</td>
+        <td>C</td>
+        <td></td>
+        <td>0.141935484</td>
+      </tr>
+      <tr id="LC227" class="js-file-line">
+        <td id="L227" class="blob-num js-line-number" data-line-number="227"></td>
+        <td>226</td>
+        <td>Forman Center</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2.6</td>
+        <td>-2.988595</td>
+        <td>-1.442481</td>
+        <td>0.6799437</td>
+        <td>C</td>
+        <td></td>
+        <td>0.083870968</td>
+      </tr>
+      <tr id="LC228" class="js-file-line">
+        <td id="L228" class="blob-num js-line-number" data-line-number="228"></td>
+        <td>227</td>
+        <td>Analytical Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>4</td>
+        <td>-1.373627</td>
+        <td>-1.352312</td>
+        <td>0.6828524</td>
+        <td>C</td>
+        <td></td>
+        <td>0.129032258</td>
+      </tr>
+      <tr id="LC229" class="js-file-line">
+        <td id="L229" class="blob-num js-line-number" data-line-number="229"></td>
+        <td>228</td>
+        <td>War Room Logistics</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>4.5</td>
+        <td>-2.070552</td>
+        <td>-1.178285</td>
+        <td>0.6884662</td>
+        <td>C</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC230" class="js-file-line">
+        <td id="L230" class="blob-num js-line-number" data-line-number="230"></td>
+        <td>229</td>
+        <td>Ohio State University</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>3.67</td>
+        <td>-0.8979034</td>
+        <td>-1.096151</td>
+        <td>0.6911156</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.118387097</td>
+      </tr>
+      <tr id="LC231" class="js-file-line">
+        <td id="L231" class="blob-num js-line-number" data-line-number="231"></td>
+        <td>230</td>
+        <td>Rice University</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>5.885</td>
+        <td>0.7399876</td>
+        <td>-0.3638036</td>
+        <td>0.6929103</td>
+        <td>C</td>
+        <td></td>
+        <td>0.3678125</td>
+      </tr>
+      <tr id="LC232" class="js-file-line">
+        <td id="L232" class="blob-num js-line-number" data-line-number="232"></td>
+        <td>231</td>
+        <td>Wick Communications</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2.83502</td>
+        <td>-2.969631</td>
+        <td>-0.8161529</td>
+        <td>0.7001478</td>
+        <td>C</td>
+        <td></td>
+        <td>0.091452258</td>
+      </tr>
+      <tr id="LC233" class="js-file-line">
+        <td id="L233" class="blob-num js-line-number" data-line-number="233"></td>
+        <td>232</td>
+        <td>Market Trends Pacific</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>4.6</td>
+        <td>-1.10908</td>
+        <td>-0.5925534</td>
+        <td>0.7073607</td>
+        <td>C</td>
+        <td></td>
+        <td>0.148387097</td>
+      </tr>
+      <tr id="LC234" class="js-file-line">
+        <td id="L234" class="blob-num js-line-number" data-line-number="234"></td>
+        <td>233</td>
+        <td>Benenson Strategy Group</td>
+        <td></td>
+        <td></td>
+        <td>8</td>
+        <td>6.36169</td>
+        <td>0.4774033</td>
+        <td>0.2208539</td>
+        <td>0.7091464</td>
+        <td>C</td>
+        <td></td>
+        <td>0.544225263</td>
+      </tr>
+      <tr id="LC235" class="js-file-line">
+        <td id="L235" class="blob-num js-line-number" data-line-number="235"></td>
+        <td>234</td>
+        <td>Schoen Consulting</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>2.3</td>
+        <td>-2.643049</td>
+        <td>-0.5354173</td>
+        <td>0.7092038</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.073225806</td>
+      </tr>
+      <tr id="LC236" class="js-file-line">
+        <td id="L236" class="blob-num js-line-number" data-line-number="236"></td>
+        <td>235</td>
+        <td>Rasmussen Reports/Pulse Opinion Research</td>
+        <td></td>
+        <td></td>
+        <td>623</td>
+        <td>5.26856</td>
+        <td>-0.0031096</td>
+        <td>0.3280691</td>
+        <td>0.7094453</td>
+        <td>C</td>
+        <td></td>
+        <td>-2.29054814</td>
+      </tr>
+      <tr id="LC237" class="js-file-line">
+        <td id="L237" class="blob-num js-line-number" data-line-number="237"></td>
+        <td>236</td>
+        <td>Yankelovich Partners, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>6</td>
+        <td>6.99037</td>
+        <td>0.4627144</td>
+        <td>0.2259009</td>
+        <td>0.7160039</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.109023636</td>
+      </tr>
+      <tr id="LC238" class="js-file-line">
+        <td id="L238" class="blob-num js-line-number" data-line-number="238"></td>
+        <td>237</td>
+        <td>NRECA Market Research</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>6.27</td>
+        <td>0.5772214</td>
+        <td>-0.033737</td>
+        <td>0.725387</td>
+        <td>C</td>
+        <td></td>
+        <td>0.202258065</td>
+      </tr>
+      <tr id="LC239" class="js-file-line">
+        <td id="L239" class="blob-num js-line-number" data-line-number="239"></td>
+        <td>238</td>
+        <td>ASA Marketing Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>5.53754</td>
+        <td>0.6688204</td>
+        <td>0.0525187</td>
+        <td>0.7281695</td>
+        <td>C</td>
+        <td></td>
+        <td>0.178630323</td>
+      </tr>
+      <tr id="LC240" class="js-file-line">
+        <td id="L240" class="blob-num js-line-number" data-line-number="240"></td>
+        <td>239</td>
+        <td>Strategic Services</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>5.48698</td>
+        <td>-0.1500978</td>
+        <td>0.0562457</td>
+        <td>0.7282897</td>
+        <td>C</td>
+        <td></td>
+        <td>0.176999355</td>
+      </tr>
+      <tr id="LC241" class="js-file-line">
+        <td id="L241" class="blob-num js-line-number" data-line-number="241"></td>
+        <td>240</td>
+        <td>University of Miami (Florida Voter)</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>6.9</td>
+        <td>1.383913</td>
+        <td>0.2732588</td>
+        <td>0.7352901</td>
+        <td>C</td>
+        <td></td>
+        <td>0.222580645</td>
+      </tr>
+      <tr id="LC242" class="js-file-line">
+        <td id="L242" class="blob-num js-line-number" data-line-number="242"></td>
+        <td>241</td>
+        <td>Cromer Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>3.9</td>
+        <td>-1.836362</td>
+        <td>0.2769774</td>
+        <td>0.7354101</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.125806452</td>
+      </tr>
+      <tr id="LC243" class="js-file-line">
+        <td id="L243" class="blob-num js-line-number" data-line-number="243"></td>
+        <td>242</td>
+        <td>McCulloch Research &amp; Polling</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>4.93971</td>
+        <td>0.9931643</td>
+        <td>0.3816747</td>
+        <td>0.7401745</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.262398182</td>
+      </tr>
+      <tr id="LC244" class="js-file-line">
+        <td id="L244" class="blob-num js-line-number" data-line-number="244"></td>
+        <td>243</td>
+        <td>Harvard University</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>6.9</td>
+        <td>1.096205</td>
+        <td>0.441648</td>
+        <td>0.740722</td>
+        <td>C</td>
+        <td></td>
+        <td>0.222580645</td>
+      </tr>
+      <tr id="LC245" class="js-file-line">
+        <td id="L245" class="blob-num js-line-number" data-line-number="245"></td>
+        <td>244</td>
+        <td>University of Iowa</td>
+        <td>yes</td>
+        <td></td>
+        <td>3</td>
+        <td>15.8667</td>
+        <td>9.036507</td>
+        <td>5.115067</td>
+        <td>0.7427511</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.213230645</td>
+      </tr>
+      <tr id="LC246" class="js-file-line">
+        <td id="L246" class="blob-num js-line-number" data-line-number="246"></td>
+        <td>245</td>
+        <td>Constituent Dynamics</td>
+        <td></td>
+        <td></td>
+        <td>7</td>
+        <td>7.37143</td>
+        <td>0.5293047</td>
+        <td>0.390393</td>
+        <td>0.7441483</td>
+        <td>C</td>
+        <td></td>
+        <td>-0.041935484</td>
+      </tr>
+      <tr id="LC247" class="js-file-line">
+        <td id="L247" class="blob-num js-line-number" data-line-number="247"></td>
+        <td>246</td>
+        <td>University of South Florida</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>3.9</td>
+        <td>-1.179151</td>
+        <td>0.7570682</td>
+        <td>0.7508969</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.124245806</td>
+      </tr>
+      <tr id="LC248" class="js-file-line">
+        <td id="L248" class="blob-num js-line-number" data-line-number="248"></td>
+        <td>247</td>
+        <td>Rossman Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>4.2</td>
+        <td>-1.939248</td>
+        <td>0.7846989</td>
+        <td>0.7517881</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.135849677</td>
+      </tr>
+      <tr id="LC249" class="js-file-line">
+        <td id="L249" class="blob-num js-line-number" data-line-number="249"></td>
+        <td>248</td>
+        <td>Zimmerman &amp; Associates/Marketing Intelligence</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>4.67499</td>
+        <td>-0.5956285</td>
+        <td>0.513383</td>
+        <td>0.752148</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.293788182</td>
+      </tr>
+      <tr id="LC250" class="js-file-line">
+        <td id="L250" class="blob-num js-line-number" data-line-number="250"></td>
+        <td>249</td>
+        <td>Wilson Research Strategies</td>
+        <td></td>
+        <td></td>
+        <td>10</td>
+        <td>6.936</td>
+        <td>1.11762</td>
+        <td>0.4156874</td>
+        <td>0.7524402</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.126051</td>
+      </tr>
+      <tr id="LC251" class="js-file-line">
+        <td id="L251" class="blob-num js-line-number" data-line-number="251"></td>
+        <td>250</td>
+        <td>University of New Orleans</td>
+        <td></td>
+        <td></td>
+        <td>5</td>
+        <td>4.966</td>
+        <td>-0.1114544</td>
+        <td>0.4710438</td>
+        <td>0.7541701</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.209705882</td>
+      </tr>
+      <tr id="LC252" class="js-file-line">
+        <td id="L252" class="blob-num js-line-number" data-line-number="252"></td>
+        <td>251</td>
+        <td>Roanoke College</td>
+        <td>yes</td>
+        <td></td>
+        <td>9</td>
+        <td>6.85938</td>
+        <td>1.275151</td>
+        <td>2.313681</td>
+        <td>0.759035</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.016249053</td>
+      </tr>
+      <tr id="LC253" class="js-file-line">
+        <td id="L253" class="blob-num js-line-number" data-line-number="253"></td>
+        <td>252</td>
+        <td>Hoffman Research Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>7.08946</td>
+        <td>2.952854</td>
+        <td>1.014834</td>
+        <td>0.7592119</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.228692258</td>
+      </tr>
+      <tr id="LC254" class="js-file-line">
+        <td id="L254" class="blob-num js-line-number" data-line-number="254"></td>
+        <td>253</td>
+        <td>Victoria Research &amp; Consulting</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>8.04827</td>
+        <td>1.98102</td>
+        <td>1.216893</td>
+        <td>0.7657299</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.259621613</td>
+      </tr>
+      <tr id="LC255" class="js-file-line">
+        <td id="L255" class="blob-num js-line-number" data-line-number="255"></td>
+        <td>254</td>
+        <td>Star Tribune</td>
+        <td>yes</td>
+        <td></td>
+        <td>13</td>
+        <td>6.32077</td>
+        <td>1.96208</td>
+        <td>1.867239</td>
+        <td>0.768196</td>
+        <td>C-</td>
+        <td></td>
+        <td>1.476342195</td>
+      </tr>
+      <tr id="LC256" class="js-file-line">
+        <td id="L256" class="blob-num js-line-number" data-line-number="256"></td>
+        <td>255</td>
+        <td>Becker Institute</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>7.60667</td>
+        <td>1.511786</td>
+        <td>0.7154502</td>
+        <td>0.7705178</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.691515455</td>
+      </tr>
+      <tr id="LC257" class="js-file-line">
+        <td id="L257" class="blob-num js-line-number" data-line-number="257"></td>
+        <td>256</td>
+        <td>West Virginia Research Center</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>6.45</td>
+        <td>1.344195</td>
+        <td>0.9305618</td>
+        <td>0.7738081</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.403125</td>
+      </tr>
+      <tr id="LC258" class="js-file-line">
+        <td id="L258" class="blob-num js-line-number" data-line-number="258"></td>
+        <td>257</td>
+        <td>Polling Company</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>6</td>
+        <td>1.194252</td>
+        <td>1.538768</td>
+        <td>0.776113</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.195133871</td>
+      </tr>
+      <tr id="LC259" class="js-file-line">
+        <td id="L259" class="blob-num js-line-number" data-line-number="259"></td>
+        <td>258</td>
+        <td>Illinois Wesleyan University</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>8.16667</td>
+        <td>2.321731</td>
+        <td>0.7887752</td>
+        <td>0.7771837</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.742424545</td>
+      </tr>
+      <tr id="LC260" class="js-file-line">
+        <td id="L260" class="blob-num js-line-number" data-line-number="260"></td>
+        <td>259</td>
+        <td>Kimball Political Consulting</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>8.07442</td>
+        <td>3.653606</td>
+        <td>4.346928</td>
+        <td>0.777985</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.952831765</td>
+      </tr>
+      <tr id="LC261" class="js-file-line">
+        <td id="L261" class="blob-num js-line-number" data-line-number="261"></td>
+        <td>260</td>
+        <td>American Research Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>223</td>
+        <td>7.25597</td>
+        <td>0.8609862</td>
+        <td>0.6936859</td>
+        <td>0.7787762</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.102548471</td>
+      </tr>
+      <tr id="LC262" class="js-file-line">
+        <td id="L262" class="blob-num js-line-number" data-line-number="262"></td>
+        <td>261</td>
+        <td>Ed Renwick</td>
+        <td></td>
+        <td></td>
+        <td>5</td>
+        <td>6.478</td>
+        <td>1.0194</td>
+        <td>0.649645</td>
+        <td>0.7796845</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.08125</td>
+      </tr>
+      <tr id="LC263" class="js-file-line">
+        <td id="L263" class="blob-num js-line-number" data-line-number="263"></td>
+        <td>262</td>
+        <td>Midwest Survey and Research</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>7.27333</td>
+        <td>1.495331</td>
+        <td>0.8450071</td>
+        <td>0.7822956</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.095151818</td>
+      </tr>
+      <tr id="LC264" class="js-file-line">
+        <td id="L264" class="blob-num js-line-number" data-line-number="264"></td>
+        <td>263</td>
+        <td>Decision Forecasting</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>8.09</td>
+        <td>3.598739</td>
+        <td>0.9208514</td>
+        <td>0.7891906</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.128788182</td>
+      </tr>
+      <tr id="LC265" class="js-file-line">
+        <td id="L265" class="blob-num js-line-number" data-line-number="265"></td>
+        <td>264</td>
+        <td>Opinion Consultants</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>6.47</td>
+        <td>1.278844</td>
+        <td>1.22298</td>
+        <td>0.7920842</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.404375</td>
+      </tr>
+      <tr id="LC266" class="js-file-line">
+        <td id="L266" class="blob-num js-line-number" data-line-number="266"></td>
+        <td>265</td>
+        <td>We Ask America</td>
+        <td></td>
+        <td></td>
+        <td>42</td>
+        <td>5.99866</td>
+        <td>0.8526012</td>
+        <td>0.4562746</td>
+        <td>0.7953371</td>
+        <td>C-</td>
+        <td></td>
+        <td>-1.513937368</td>
+      </tr>
+      <tr id="LC267" class="js-file-line">
+        <td id="L267" class="blob-num js-line-number" data-line-number="267"></td>
+        <td>266</td>
+        <td>Public Strategies, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>6</td>
+        <td>7.88333</td>
+        <td>0.213587</td>
+        <td>0.7052584</td>
+        <td>0.7958968</td>
+        <td>C-</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC268" class="js-file-line">
+        <td id="L268" class="blob-num js-line-number" data-line-number="268"></td>
+        <td>267</td>
+        <td>Independent Market Research</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>5.73</td>
+        <td>0.3851578</td>
+        <td>1.292107</td>
+        <td>0.7964047</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.333125</td>
+      </tr>
+      <tr id="LC269" class="js-file-line">
+        <td id="L269" class="blob-num js-line-number" data-line-number="269"></td>
+        <td>268</td>
+        <td>Franklin Pierce University</td>
+        <td></td>
+        <td></td>
+        <td>19</td>
+        <td>6.49526</td>
+        <td>0.572176</td>
+        <td>0.5103051</td>
+        <td>0.7970721</td>
+        <td>C-</td>
+        <td></td>
+        <td>1.279762857</td>
+      </tr>
+      <tr id="LC270" class="js-file-line">
+        <td id="L270" class="blob-num js-line-number" data-line-number="270"></td>
+        <td>269</td>
+        <td>Maine People’s Resource Center</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>7.4</td>
+        <td>2.398103</td>
+        <td>1.047915</td>
+        <td>0.8007419</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.43660125</td>
+      </tr>
+      <tr id="LC271" class="js-file-line">
+        <td id="L271" class="blob-num js-line-number" data-line-number="271"></td>
+        <td>270</td>
+        <td>CrossTarget</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>7.7</td>
+        <td>3.267918</td>
+        <td>1.495115</td>
+        <td>0.8090926</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.48125</td>
+      </tr>
+      <tr id="LC272" class="js-file-line">
+        <td id="L272" class="blob-num js-line-number" data-line-number="272"></td>
+        <td>271</td>
+        <td>ccAdvertising</td>
+        <td>yes</td>
+        <td></td>
+        <td>29</td>
+        <td>6.85897</td>
+        <td>1.924893</td>
+        <td>1.312524</td>
+        <td>0.8101137</td>
+        <td>C-</td>
+        <td></td>
+        <td>-2.575295172</td>
+      </tr>
+      <tr id="LC273" class="js-file-line">
+        <td id="L273" class="blob-num js-line-number" data-line-number="273"></td>
+        <td>272</td>
+        <td>TeleResearch Corporation</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>8.6</td>
+        <td>1.191247</td>
+        <td>2.608664</td>
+        <td>0.8106257</td>
+        <td>C-</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC274" class="js-file-line">
+        <td id="L274" class="blob-num js-line-number" data-line-number="274"></td>
+        <td>273</td>
+        <td>Ron Lester and Associates</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>18.9</td>
+        <td>11.46454</td>
+        <td>2.668408</td>
+        <td>0.8125529</td>
+        <td>C-</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC275" class="js-file-line">
+        <td id="L275" class="blob-num js-line-number" data-line-number="275"></td>
+        <td>274</td>
+        <td>Marketing Resource Group (MRG)</td>
+        <td>yes</td>
+        <td></td>
+        <td>4</td>
+        <td>10.3675</td>
+        <td>4.320362</td>
+        <td>4.707345</td>
+        <td>0.820387</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.271211818</td>
+      </tr>
+      <tr id="LC276" class="js-file-line">
+        <td id="L276" class="blob-num js-line-number" data-line-number="276"></td>
+        <td>275</td>
+        <td>Southern Opinion Research</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>9.4</td>
+        <td>3.701227</td>
+        <td>2.963215</td>
+        <td>0.8220628</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.303225806</td>
+      </tr>
+      <tr id="LC277" class="js-file-line">
+        <td id="L277" class="blob-num js-line-number" data-line-number="277"></td>
+        <td>276</td>
+        <td>Lycoming College</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>7.28358</td>
+        <td>1.353656</td>
+        <td>1.294819</td>
+        <td>0.8231876</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.662143636</td>
+      </tr>
+      <tr id="LC278" class="js-file-line">
+        <td id="L278" class="blob-num js-line-number" data-line-number="278"></td>
+        <td>277</td>
+        <td>Great Lakes Strategies Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>7.6</td>
+        <td>2.776792</td>
+        <td>3.093036</td>
+        <td>0.8262506</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.24516129</td>
+      </tr>
+      <tr id="LC279" class="js-file-line">
+        <td id="L279" class="blob-num js-line-number" data-line-number="279"></td>
+        <td>278</td>
+        <td>TMR Research</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>7.845</td>
+        <td>2.379676</td>
+        <td>1.882308</td>
+        <td>0.8332922</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.4903125</td>
+      </tr>
+      <tr id="LC280" class="js-file-line">
+        <td id="L280" class="blob-num js-line-number" data-line-number="280"></td>
+        <td>279</td>
+        <td>A&amp;A Research</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>10.1</td>
+        <td>4.022738</td>
+        <td>3.650743</td>
+        <td>0.8442411</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.325806452</td>
+      </tr>
+      <tr id="LC281" class="js-file-line">
+        <td id="L281" class="blob-num js-line-number" data-line-number="281"></td>
+        <td>280</td>
+        <td>California State University, Bakersfield</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>9.85</td>
+        <td>3.819179</td>
+        <td>3.689963</td>
+        <td>0.8455063</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.317741935</td>
+      </tr>
+      <tr id="LC282" class="js-file-line">
+        <td id="L282" class="blob-num js-line-number" data-line-number="282"></td>
+        <td>281</td>
+        <td>Marketing Research Institute</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>7.4</td>
+        <td>2.0244</td>
+        <td>3.755304</td>
+        <td>0.847614</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.238709677</td>
+      </tr>
+      <tr id="LC283" class="js-file-line">
+        <td id="L283" class="blob-num js-line-number" data-line-number="283"></td>
+        <td>282</td>
+        <td>OpinionWorks</td>
+        <td></td>
+        <td></td>
+        <td>6</td>
+        <td>7.31274</td>
+        <td>2.059579</td>
+        <td>1.074964</td>
+        <td>0.8575144</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.508241667</td>
+      </tr>
+      <tr id="LC284" class="js-file-line">
+        <td id="L284" class="blob-num js-line-number" data-line-number="284"></td>
+        <td>283</td>
+        <td>Gonzales Research &amp; Marketing Strategies, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>8</td>
+        <td>6.465</td>
+        <td>0.495504</td>
+        <td>0.9321102</td>
+        <td>0.8588846</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.614844054</td>
+      </tr>
+      <tr id="LC285" class="js-file-line">
+        <td id="L285" class="blob-num js-line-number" data-line-number="285"></td>
+        <td>284</td>
+        <td>New Frontier Strategy</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>21.6</td>
+        <td>14.07066</td>
+        <td>4.253427</td>
+        <td>0.8636825</td>
+        <td>C-</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC286" class="js-file-line">
+        <td id="L286" class="blob-num js-line-number" data-line-number="286"></td>
+        <td>285</td>
+        <td>Opinion Research Associates</td>
+        <td></td>
+        <td></td>
+        <td>10</td>
+        <td>6.014</td>
+        <td>0.5559176</td>
+        <td>0.8869806</td>
+        <td>0.8702635</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.9605</td>
+      </tr>
+      <tr id="LC287" class="js-file-line">
+        <td id="L287" class="blob-num js-line-number" data-line-number="287"></td>
+        <td>286</td>
+        <td>Anzalone Liszt Grove Research</td>
+        <td>yes</td>
+        <td></td>
+        <td>11</td>
+        <td>7.62885</td>
+        <td>1.730664</td>
+        <td>2.462146</td>
+        <td>0.8739838</td>
+        <td>C-</td>
+        <td></td>
+        <td>1.360887805</td>
+      </tr>
+      <tr id="LC288" class="js-file-line">
+        <td id="L288" class="blob-num js-line-number" data-line-number="288"></td>
+        <td>287</td>
+        <td>Zata3</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>10.15</td>
+        <td>4.325882</td>
+        <td>2.55629</td>
+        <td>0.8754161</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.246875</td>
+      </tr>
+      <tr id="LC289" class="js-file-line">
+        <td id="L289" class="blob-num js-line-number" data-line-number="289"></td>
+        <td>288</td>
+        <td>SMS Research &amp; Marketing Services, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>9.75</td>
+        <td>5.477764</td>
+        <td>4.865973</td>
+        <td>0.883442</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.314516129</td>
+      </tr>
+      <tr id="LC290" class="js-file-line">
+        <td id="L290" class="blob-num js-line-number" data-line-number="290"></td>
+        <td>289</td>
+        <td>Glover Park Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>11.4</td>
+        <td>4.91771</td>
+        <td>4.910876</td>
+        <td>0.8848905</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.366545161</td>
+      </tr>
+      <tr id="LC291" class="js-file-line">
+        <td id="L291" class="blob-num js-line-number" data-line-number="291"></td>
+        <td>290</td>
+        <td>Basswood Research</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>13.0482</td>
+        <td>6.28335</td>
+        <td>5.034547</td>
+        <td>0.8888799</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.420909677</td>
+      </tr>
+      <tr id="LC292" class="js-file-line">
+        <td id="L292" class="blob-num js-line-number" data-line-number="292"></td>
+        <td>291</td>
+        <td>Cherry Communications</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>14.5</td>
+        <td>6.610603</td>
+        <td>5.266136</td>
+        <td>0.8963505</td>
+        <td>C-</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC293" class="js-file-line">
+        <td id="L293" class="blob-num js-line-number" data-line-number="293"></td>
+        <td>292</td>
+        <td>University of Illinois at Chicago</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>14.09</td>
+        <td>8.338639</td>
+        <td>5.509</td>
+        <td>0.9041848</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.454516129</td>
+      </tr>
+      <tr id="LC294" class="js-file-line">
+        <td id="L294" class="blob-num js-line-number" data-line-number="294"></td>
+        <td>293</td>
+        <td>Arthur J. Finkelstein &amp; Associates</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>13.67</td>
+        <td>7.010751</td>
+        <td>5.680003</td>
+        <td>0.909701</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.440967742</td>
+      </tr>
+      <tr id="LC295" class="js-file-line">
+        <td id="L295" class="blob-num js-line-number" data-line-number="295"></td>
+        <td>294</td>
+        <td>MarketAide Services, Inc.</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>11.2</td>
+        <td>4.948533</td>
+        <td>5.933177</td>
+        <td>0.917868</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.361290323</td>
+      </tr>
+      <tr id="LC296" class="js-file-line">
+        <td id="L296" class="blob-num js-line-number" data-line-number="296"></td>
+        <td>295</td>
+        <td>Merriman River Group</td>
+        <td>yes</td>
+        <td></td>
+        <td>17</td>
+        <td>7.35331</td>
+        <td>2.3041</td>
+        <td>2.029601</td>
+        <td>0.9228412</td>
+        <td>C-</td>
+        <td></td>
+        <td>-1.77379</td>
+      </tr>
+      <tr id="LC297" class="js-file-line">
+        <td id="L297" class="blob-num js-line-number" data-line-number="297"></td>
+        <td>296</td>
+        <td>Tulsa Surveys</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>11.9</td>
+        <td>6.470038</td>
+        <td>6.099852</td>
+        <td>0.9232445</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.383870968</td>
+      </tr>
+      <tr id="LC298" class="js-file-line">
+        <td id="L298" class="blob-num js-line-number" data-line-number="298"></td>
+        <td>297</td>
+        <td>Dixie Strategies</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>14.5</td>
+        <td>7.859843</td>
+        <td>6.193504</td>
+        <td>0.9262655</td>
+        <td>C-</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC299" class="js-file-line">
+        <td id="L299" class="blob-num js-line-number" data-line-number="299"></td>
+        <td>298</td>
+        <td>Bannon Communications</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>10.3713</td>
+        <td>4.098165</td>
+        <td>3.598557</td>
+        <td>0.9405578</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.64820625</td>
+      </tr>
+      <tr id="LC300" class="js-file-line">
+        <td id="L300" class="blob-num js-line-number" data-line-number="300"></td>
+        <td>299</td>
+        <td>GCR &amp; Associates</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>18.3</td>
+        <td>9.939995</td>
+        <td>6.703821</td>
+        <td>0.9427274</td>
+        <td>C-</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC301" class="js-file-line">
+        <td id="L301" class="blob-num js-line-number" data-line-number="301"></td>
+        <td>300</td>
+        <td>Anderson Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>10.9</td>
+        <td>6.506397</td>
+        <td>6.785184</td>
+        <td>0.945352</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.351612903</td>
+      </tr>
+      <tr id="LC302" class="js-file-line">
+        <td id="L302" class="blob-num js-line-number" data-line-number="302"></td>
+        <td>301</td>
+        <td>PSI</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>12.45</td>
+        <td>5.05696</td>
+        <td>2.877558</td>
+        <td>0.9670731</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.107096774</td>
+      </tr>
+      <tr id="LC303" class="js-file-line">
+        <td id="L303" class="blob-num js-line-number" data-line-number="303"></td>
+        <td>302</td>
+        <td>Big Ten</td>
+        <td></td>
+        <td></td>
+        <td>10</td>
+        <td>4.80055</td>
+        <td>0.3963642</td>
+        <td>1.301232</td>
+        <td>0.9738263</td>
+        <td>C-</td>
+        <td></td>
+        <td>1.12341</td>
+      </tr>
+      <tr id="LC304" class="js-file-line">
+        <td id="L304" class="blob-num js-line-number" data-line-number="304"></td>
+        <td>303</td>
+        <td>Critical Insights</td>
+        <td>yes</td>
+        <td></td>
+        <td>17</td>
+        <td>8.61912</td>
+        <td>2.862293</td>
+        <td>2.203317</td>
+        <td>0.9856746</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.298178667</td>
+      </tr>
+      <tr id="LC305" class="js-file-line">
+        <td id="L305" class="blob-num js-line-number" data-line-number="305"></td>
+        <td>304</td>
+        <td>Abacus Associates</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>12.0625</td>
+        <td>6.066127</td>
+        <td>4.697484</td>
+        <td>1.009241</td>
+        <td>C-</td>
+        <td></td>
+        <td>-0.02890525</td>
+      </tr>
+      <tr id="LC306" class="js-file-line">
+        <td id="L306" class="blob-num js-line-number" data-line-number="306"></td>
+        <td>305</td>
+        <td>Hamilton Campaigns</td>
+        <td></td>
+        <td></td>
+        <td>7</td>
+        <td>6.38203</td>
+        <td>0.9491873</td>
+        <td>1.801346</td>
+        <td>1.011085</td>
+        <td>C-</td>
+        <td></td>
+        <td>1.207411081</td>
+      </tr>
+      <tr id="LC307" class="js-file-line">
+        <td id="L307" class="blob-num js-line-number" data-line-number="307"></td>
+        <td>306</td>
+        <td>Southeastern Louisiana University</td>
+        <td></td>
+        <td></td>
+        <td>8</td>
+        <td>6.62794</td>
+        <td>1.490532</td>
+        <td>1.695619</td>
+        <td>1.019623</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.043242857</td>
+      </tr>
+      <tr id="LC308" class="js-file-line">
+        <td id="L308" class="blob-num js-line-number" data-line-number="308"></td>
+        <td>307</td>
+        <td>Consumer Logic</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>8.7775</td>
+        <td>3.220596</td>
+        <td>2.875539</td>
+        <td>1.034203</td>
+        <td>C-</td>
+        <td></td>
+        <td>0.638529412</td>
+      </tr>
+      <tr id="LC309" class="js-file-line">
+        <td id="L309" class="blob-num js-line-number" data-line-number="309"></td>
+        <td>308</td>
+        <td>Schapiro Group</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>20</td>
+        <td>11.80795</td>
+        <td>5.097269</td>
+        <td>1.034227</td>
+        <td>C-</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="LC310" class="js-file-line">
+        <td id="L310" class="blob-num js-line-number" data-line-number="310"></td>
+        <td>309</td>
+        <td>Minnesota State University Moorhead</td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        <td>9.25</td>
+        <td>3.545824</td>
+        <td>3.080935</td>
+        <td>1.058367</td>
+        <td>D+</td>
+        <td></td>
+        <td>0.536363636</td>
+      </tr>
+      <tr id="LC311" class="js-file-line">
+        <td id="L311" class="blob-num js-line-number" data-line-number="311"></td>
+        <td>310</td>
+        <td>Greg Smith and Associates</td>
+        <td></td>
+        <td></td>
+        <td>5</td>
+        <td>8.52867</td>
+        <td>2.978578</td>
+        <td>2.677283</td>
+        <td>1.069347</td>
+        <td>D+</td>
+        <td></td>
+        <td>1.218381429</td>
+      </tr>
+      <tr id="LC312" class="js-file-line">
+        <td id="L312" class="blob-num js-line-number" data-line-number="312"></td>
+        <td>311</td>
+        <td>Jeffrey Stonecash</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>17.3275</td>
+        <td>12.30451</td>
+        <td>10.71166</td>
+        <td>1.072012</td>
+        <td>D+</td>
+        <td></td>
+        <td>-0.558951613</td>
+      </tr>
+      <tr id="LC313" class="js-file-line">
+        <td id="L313" class="blob-num js-line-number" data-line-number="313"></td>
+        <td>312</td>
+        <td>Rainmaker Media Group</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>12.7206</td>
+        <td>8.084713</td>
+        <td>11.08654</td>
+        <td>1.084105</td>
+        <td>D+</td>
+        <td></td>
+        <td>0.410341935</td>
+      </tr>
+      <tr id="LC314" class="js-file-line">
+        <td id="L314" class="blob-num js-line-number" data-line-number="314"></td>
+        <td>313</td>
+        <td>Datamar</td>
+        <td></td>
+        <td></td>
+        <td>8</td>
+        <td>6.291</td>
+        <td>1.01545</td>
+        <td>2.008827</td>
+        <td>1.085562</td>
+        <td>D+</td>
+        <td></td>
+        <td>-0.410398571</td>
+      </tr>
+      <tr id="LC315" class="js-file-line">
+        <td id="L315" class="blob-num js-line-number" data-line-number="315"></td>
+        <td>314</td>
+        <td>Harris Interactive, online</td>
+        <td></td>
+        <td>yes</td>
+        <td>126</td>
+        <td>5.4677</td>
+        <td>1.944731</td>
+        <td>1.201007</td>
+        <td>1.128461</td>
+        <td>D+</td>
+        <td></td>
+        <td>-1.724810769</td>
+      </tr>
+      <tr id="LC316" class="js-file-line">
+        <td id="L316" class="blob-num js-line-number" data-line-number="316"></td>
+        <td>315</td>
+        <td>Neighbor</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>17.09</td>
+        <td>11.73512</td>
+        <td>12.71842</td>
+        <td>1.136747</td>
+        <td>D+</td>
+        <td></td>
+        <td>-0.551290323</td>
+      </tr>
+      <tr id="LC317" class="js-file-line">
+        <td id="L317" class="blob-num js-line-number" data-line-number="317"></td>
+        <td>316</td>
+        <td>University of Alabama</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>12.025</td>
+        <td>7.05631</td>
+        <td>7.084352</td>
+        <td>1.15842</td>
+        <td>D+</td>
+        <td></td>
+        <td>-0.7515625</td>
+      </tr>
+      <tr id="LC318" class="js-file-line">
+        <td id="L318" class="blob-num js-line-number" data-line-number="318"></td>
+        <td>317</td>
+        <td>Brown University</td>
+        <td></td>
+        <td></td>
+        <td>8</td>
+        <td>9.81125</td>
+        <td>2.783175</td>
+        <td>2.441768</td>
+        <td>1.176707</td>
+        <td>D+</td>
+        <td></td>
+        <td>-0.518857143</td>
+      </tr>
+      <tr id="LC319" class="js-file-line">
+        <td id="L319" class="blob-num js-line-number" data-line-number="319"></td>
+        <td>318</td>
+        <td>Ohio University</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>8.7927</td>
+        <td>4.138304</td>
+        <td>7.382927</td>
+        <td>1.177081</td>
+        <td>D+</td>
+        <td></td>
+        <td>0.54954375</td>
+      </tr>
+      <tr id="LC320" class="js-file-line">
+        <td id="L320" class="blob-num js-line-number" data-line-number="320"></td>
+        <td>319</td>
+        <td>JMC Enterprises of Louisiana</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>22.9</td>
+        <td>17.20041</td>
+        <td>14.72176</td>
+        <td>1.20137</td>
+        <td>D+</td>
+        <td></td>
+        <td>-0.738709677</td>
+      </tr>
+      <tr id="LC321" class="js-file-line">
+        <td id="L321" class="blob-num js-line-number" data-line-number="321"></td>
+        <td>320</td>
+        <td>20/20 Insight</td>
+        <td></td>
+        <td></td>
+        <td>5</td>
+        <td>16.6</td>
+        <td>9.802733</td>
+        <td>3.642903</td>
+        <td>1.207293</td>
+        <td>D+</td>
+        <td></td>
+        <td>0.012506</td>
+      </tr>
+      <tr id="LC322" class="js-file-line">
+        <td id="L322" class="blob-num js-line-number" data-line-number="322"></td>
+        <td>321</td>
+        <td>Loyola University (New Orleans)</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>12.1218</td>
+        <td>7.257471</td>
+        <td>8.25833</td>
+        <td>1.231794</td>
+        <td>D+</td>
+        <td></td>
+        <td>0.7576125</td>
+      </tr>
+      <tr id="LC323" class="js-file-line">
+        <td id="L323" class="blob-num js-line-number" data-line-number="323"></td>
+        <td>322</td>
+        <td>Baydoun Consulting</td>
+        <td></td>
+        <td></td>
+        <td>6</td>
+        <td>6.83285</td>
+        <td>2.00028</td>
+        <td>3.449093</td>
+        <td>1.253203</td>
+        <td>D</td>
+        <td></td>
+        <td>-1.029530588</td>
+      </tr>
+      <tr id="LC324" class="js-file-line">
+        <td id="L324" class="blob-num js-line-number" data-line-number="324"></td>
+        <td>323</td>
+        <td>WCIA-TV</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>18.295</td>
+        <td>11.94438</td>
+        <td>8.795616</td>
+        <td>1.265374</td>
+        <td>D</td>
+        <td></td>
+        <td>-1.1434375</td>
+      </tr>
+      <tr id="LC325" class="js-file-line">
+        <td id="L325" class="blob-num js-line-number" data-line-number="325"></td>
+        <td>324</td>
+        <td>Marketing Workshop</td>
+        <td></td>
+        <td></td>
+        <td>7</td>
+        <td>9.73857</td>
+        <td>4.687338</td>
+        <td>3.147917</td>
+        <td>1.265842</td>
+        <td>D</td>
+        <td></td>
+        <td>0.297027027</td>
+      </tr>
+      <tr id="LC326" class="js-file-line">
+        <td id="L326" class="blob-num js-line-number" data-line-number="326"></td>
+        <td>325</td>
+        <td>Momentum Analysis</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>13.6657</td>
+        <td>7.74179</td>
+        <td>6.767613</td>
+        <td>1.320715</td>
+        <td>D</td>
+        <td></td>
+        <td>0.521979091</td>
+      </tr>
+      <tr id="LC327" class="js-file-line">
+        <td id="L327" class="blob-num js-line-number" data-line-number="327"></td>
+        <td>326</td>
+        <td>Data West Polling</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>14.5667</td>
+        <td>8.667041</td>
+        <td>6.845376</td>
+        <td>1.327784</td>
+        <td>D</td>
+        <td></td>
+        <td>1.324245455</td>
+      </tr>
+      <tr id="LC328" class="js-file-line">
+        <td id="L328" class="blob-num js-line-number" data-line-number="328"></td>
+        <td>327</td>
+        <td>InsiderAdvantage</td>
+        <td></td>
+        <td></td>
+        <td>89</td>
+        <td>8.12004</td>
+        <td>1.446195</td>
+        <td>1.167844</td>
+        <td>1.343688</td>
+        <td>D</td>
+        <td></td>
+        <td>0.282310455</td>
+      </tr>
+      <tr id="LC329" class="js-file-line">
+        <td id="L329" class="blob-num js-line-number" data-line-number="329"></td>
+        <td>328</td>
+        <td>Wenzel Strategies</td>
+        <td>Sometimes</td>
+        <td></td>
+        <td>8</td>
+        <td>8.2237</td>
+        <td>3.867036</td>
+        <td>4.629449</td>
+        <td>1.42187</td>
+        <td>D</td>
+        <td></td>
+        <td>-1.73328</td>
+      </tr>
+      <tr id="LC330" class="js-file-line">
+        <td id="L330" class="blob-num js-line-number" data-line-number="330"></td>
+        <td>329</td>
+        <td>Nielson Brothers Polling</td>
+        <td></td>
+        <td></td>
+        <td>6</td>
+        <td>8.50772</td>
+        <td>3.943515</td>
+        <td>4.614092</td>
+        <td>1.447369</td>
+        <td>D</td>
+        <td></td>
+        <td>1.418625</td>
+      </tr>
+      <tr id="LC331" class="js-file-line">
+        <td id="L331" class="blob-num js-line-number" data-line-number="331"></td>
+        <td>330</td>
+        <td>Riggs Research Services</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>33.7</td>
+        <td>28.40538</td>
+        <td>24.83868</td>
+        <td>1.527722</td>
+        <td>D</td>
+        <td></td>
+        <td>1.087096774</td>
+      </tr>
+      <tr id="LC332" class="js-file-line">
+        <td id="L332" class="blob-num js-line-number" data-line-number="332"></td>
+        <td>331</td>
+        <td>Valley Research</td>
+        <td></td>
+        <td></td>
+        <td>6</td>
+        <td>11.4838</td>
+        <td>6.96825</td>
+        <td>5.139575</td>
+        <td>1.53495</td>
+        <td>D</td>
+        <td></td>
+        <td>0.400483333</td>
+      </tr>
+      <tr id="LC333" class="js-file-line">
+        <td id="L333" class="blob-num js-line-number" data-line-number="333"></td>
+        <td>332</td>
+        <td>Dane &amp; Associates</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>21.2041</td>
+        <td>16.61738</td>
+        <td>13.15154</td>
+        <td>1.537619</td>
+        <td>D</td>
+        <td></td>
+        <td>-1.32525625</td>
+      </tr>
+      <tr id="LC334" class="js-file-line">
+        <td id="L334" class="blob-num js-line-number" data-line-number="334"></td>
+        <td>333</td>
+        <td>Millersville University</td>
+        <td></td>
+        <td></td>
+        <td>5</td>
+        <td>14.062</td>
+        <td>8.877637</td>
+        <td>6.069618</td>
+        <td>1.553966</td>
+        <td>D-</td>
+        <td></td>
+        <td>-1.494571429</td>
+      </tr>
+      <tr id="LC335" class="js-file-line">
+        <td id="L335" class="blob-num js-line-number" data-line-number="335"></td>
+        <td>334</td>
+        <td>Massie &amp; Associates</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>23.9</td>
+        <td>17.5788</td>
+        <td>15.05752</td>
+        <td>1.656743</td>
+        <td>D-</td>
+        <td></td>
+        <td>-1.49375</td>
+      </tr>
+      <tr id="LC336" class="js-file-line">
+        <td id="L336" class="blob-num js-line-number" data-line-number="336"></td>
+        <td>335</td>
+        <td>Humphrey Institute</td>
+        <td></td>
+        <td>yes</td>
+        <td>10</td>
+        <td>13.0664</td>
+        <td>7.424629</td>
+        <td>6.714734</td>
+        <td>1.897668</td>
+        <td>D-</td>
+        <td></td>
+        <td>0.798111579</td>
+      </tr>
+      <tr id="LC337" class="js-file-line">
+        <td id="L337" class="blob-num js-line-number" data-line-number="337"></td>
+        <td>336</td>
+        <td>Zogby Interactive/JZ Analytics</td>
+        <td></td>
+        <td></td>
+        <td>86</td>
+        <td>6.51235</td>
+        <td>1.883996</td>
+        <td>2.738137</td>
+        <td>2.502591</td>
+        <td>F</td>
+        <td></td>
+        <td>-1.44392087</td>
+      </tr>
+      <tr id="LC338" class="js-file-line">
+        <td id="L338" class="blob-num js-line-number" data-line-number="338"></td>
+        <td>337</td>
+        <td>TCJ Research</td>
+        <td></td>
+        <td></td>
+        <td>133</td>
+        <td>6.44887</td>
+        <td>2.097317</td>
+        <td>3.000317</td>
+        <td>2.894006</td>
+        <td>F</td>
+        <td>yes</td>
+        <td>-4.509717742</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>
+
+</div>
+
+<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
+    <button type="submit" class="btn">Go</button>
+</form></div>
+
+  </div>
+  <div class="modal-backdrop"></div>
+</div>
+
+    </div>
+  </div>
+
+    </div>
+
+        <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+        <li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage">
+      <span aria-hidden="true" class="mega-octicon octicon-mark-github" title="GitHub "></span>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2016 <span title="0.14718s from github-fe140-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+    
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span aria-hidden="true" class="octicon octicon-alert"></span>
+      <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+        <span aria-hidden="true" class="octicon octicon-x"></span>
+      </button>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" integrity="sha256-KJVHXHFPE3kLY+Y2tTiaaRiiYCWcWyKhWs9e8mvW7wk=" src="https://assets-cdn.github.com/assets/frameworks-2895475c714f13790b63e636b5389a6918a260259c5b22a15acf5ef26bd6ef09.js"></script>
+      <script async="async" crossorigin="anonymous" integrity="sha256-VAa8NFVPNNgd3mb5mx7UI9Yqm48f1I7y+uHbmO/hZ+k=" src="https://assets-cdn.github.com/assets/github-5406bc34554f34d81dde66f99b1ed423d62a9b8f1fd48ef2fae1db98efe167e9.js"></script>
+      
+      
+      
+    <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+      <span aria-hidden="true" class="octicon octicon-alert"></span>
+      <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+      <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    </div>
+    <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <span aria-hidden="true" class="octicon octicon-x"></span>
+    </button>
+  </div>
+</div>
+
+  </body>
+</html>
+
