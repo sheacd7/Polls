@@ -30,14 +30,15 @@
 #   keys - poll group id
 #   vals - labels for poll results (list of candidates)
 
-
 # TODO:
 # handle missing date
-#  [126] Hot Air/Townhall/Survey Monkey
+#  [134] Hot Air/Townhall/Survey Monkey
+# zero-pad '%02s' and remove spaces from results
 
 # FIXED:
 # handle multiple [ref_id] per row 
-
+# consolidate 'Others' category
+# zero-pad '%03s' poll ids
 
 scriptname=$(basename $0)
 function usage {
@@ -110,6 +111,7 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
       # set poll id to the previous one concatenated with 'b'
       poll_id="${poll_ids[@]: -1}"b
     fi
+    printf -v poll_id '%03s' "$poll_id"
     # extract poll info (source, sample size, margin of error, dates admin)
     x="${poll_line%%201[23456],*}"
     pos=$(( ${#x} + 5 ))
@@ -133,10 +135,22 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
     # remove trailing ','
     # remove '%'
     # replace '—' with '0'
+    # replace '&lt;1' with '0'
     poll_result="${poll_result%, }"
     poll_result="${poll_result//%/}"
     poll_result="${poll_result//—/0}"
-    # consolidate 'Other' categories into one numeric value
+    poll_result="${poll_result//&lt;1/0}"
+    # remove non-numeric chars except comma, semicolon, space
+    poll_result="${poll_result//[^0-9,;\ ]/}"
+    # consolidate 'Others' category results into one numeric value
+    other_results=( ${poll_result##*,} )
+    # sum numeric values
+    sum=0
+    for num in "${other_results[@]}"; do 
+      : $(( sum += $num ))
+    done
+    # replace string value with sum
+    poll_result="${poll_result%,*}, ${sum}"
 
     # add each value to corresponding array
     poll_groups[${poll_group}]="${poll_groups[$poll_group]}, ${poll_id}"

@@ -59,7 +59,7 @@ for line_o in "${table_o[@]}"; do
     sed -e 's, id=,,g;s, href=,,g;s, class=,,g;s, style=,,g;s, title=,,g;s, rowspan=,,g' \
         -e 's,"[^"]*",,g;s,&#160;?,,g' \
         -e 's,</*a>,,g;s,</*b>,,g;s,</*sup>,,g;s,</*span>,,g;s,</*small>,,g;s,</*abbr>,,g' \
-        -e 's,</*th>,,g;s,<br\ />,,g;s,<td>,,g;s,</td>,\,,g;s,<tr>,,g;s,</tr>,\n,g' #> "${OUT_FILE}"
+        -e 's,</*th>,,g;s,<br\ />,,g;s,<td>,,g;s,</td>,\,,g;s,<tr>,,g;s,</tr>,\n,g' >> "${OUT_FILE}"
 
 done 
 
