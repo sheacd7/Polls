@@ -33,12 +33,12 @@
 # TODO:
 # handle missing date
 #  [134] Hot Air/Townhall/Survey Monkey
-# zero-pad '%02s' and remove spaces from results
 
 # FIXED:
 # handle multiple [ref_id] per row 
 # consolidate 'Others' category
 # zero-pad '%03s' poll ids
+# zero-pad '%02u' and remove spaces from results
 
 scriptname=$(basename $0)
 function usage {
@@ -151,6 +151,8 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
     done
     # replace string value with sum
     poll_result="${poll_result%,*}, ${sum}"
+    # zero-pad '%02s' and remove spaces from results
+    printf -v poll_result '%02u,' ${poll_result//,/}
 
     # add each value to corresponding array
     poll_groups[${poll_group}]="${poll_groups[$poll_group]}, ${poll_id}"
