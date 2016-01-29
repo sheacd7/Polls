@@ -62,6 +62,18 @@ while [[ $# > 0 ]]; do
   shift
 done
 
+# write array to file as key delim value
+function serialize_array {
+  # create local array from keys of passed array name
+  local -a 'keys=( "${!'"$1"'[@]}" )'
+  delim="$2"    # key/index delimiter
+  outfile="$3"  # output filename
+  for key in "${keys[@]}"; do
+    ref=${1}[$key]
+    printf '%s\n' "${key}"${delim}"${!ref}"
+  done > "${outfile}"
+}
+
 # first grab each wikitable table into separate array
 echo "Reading from file: ${IN_FILE}"
 mapfile -t content < "${IN_FILE}"
@@ -169,26 +181,35 @@ done
 
 OUT_FILE="/cygdrive/c/users/sheacd/GitHub/Polls/2016 Presidential Election/data/R_Primary_National_"
 
-# write each array to file =====================================================
+# write (serialize) each array to file =========================================
+
 # data organized by poll group id
-for key in "${!poll_groups[@]}"; do
-  printf '%s\n' "${key};${poll_groups[$key]}"
-done > "${OUT_FILE}_poll_groups.csv"
-for key in "${!poll_info_labels[@]}"; do
-  printf '%s\n' "${key};${poll_info_labels[$key]}"
-done > "${OUT_FILE}_poll_info_labels.csv"
-for key in "${!poll_result_labels[@]}"; do
-  printf '%s\n' "${key};${poll_result_labels[$key]}"
-done > "${OUT_FILE}_poll_result_labels.csv"
+serialize_array poll_groups        ';' "${OUT_FILE}_poll_groups.csv"
+serialize_array poll_info_labels   ';' "${OUT_FILE}_poll_info_labels.csv"
+serialize_array poll_result_labels ';' "${OUT_FILE}_poll_result_labels.csv"
 
 # data organized by poll id
-for key in "${!poll_ids[@]}"; do
-  printf '%s\n' "${key};${poll_ids[$key]}"
-done > "${OUT_FILE}_poll_ids.csv"
-for key in "${!poll_infos[@]}"; do
-  printf '%s\n' "${key};${poll_infos[$key]}"
-done > "${OUT_FILE}_poll_infos.csv"
-for key in "${!poll_results[@]}"; do
-  printf '%s\n' "${key};${poll_results[$key]}"
-done > "${OUT_FILE}_poll_results.csv"
+serialize_array poll_ids     ';' "${OUT_FILE}_poll_ids.csv"
+serialize_array poll_infos   ';' "${OUT_FILE}_poll_infos.csv"
+serialize_array poll_results ';' "${OUT_FILE}_poll_results.csv"
+
+# for key in "${!poll_groups[@]}"; do
+#   printf '%s\n' "${key};${poll_groups[$key]}"
+# done > "${OUT_FILE}_poll_groups.csv"
+# for key in "${!poll_info_labels[@]}"; do
+#   printf '%s\n' "${key};${poll_info_labels[$key]}"
+# done > "${OUT_FILE}_poll_info_labels.csv"
+# for key in "${!poll_result_labels[@]}"; do
+#   printf '%s\n' "${key};${poll_result_labels[$key]}"
+# done > "${OUT_FILE}_poll_result_labels.csv"
+
+# for key in "${!poll_ids[@]}"; do
+#   printf '%s\n' "${key};${poll_ids[$key]}"
+# done > "${OUT_FILE}_poll_ids.csv"
+# for key in "${!poll_infos[@]}"; do
+#   printf '%s\n' "${key};${poll_infos[$key]}"
+# done > "${OUT_FILE}_poll_infos.csv"
+# for key in "${!poll_results[@]}"; do
+#   printf '%s\n' "${key};${poll_results[$key]}"
+# done > "${OUT_FILE}_poll_results.csv"
 
