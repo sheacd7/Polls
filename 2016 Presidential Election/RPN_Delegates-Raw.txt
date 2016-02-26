@@ -1,0 +1,61 @@
+State Date  Delegates Trump Cruz  Rubio Kasich  Bush  Carson  Primary/
+Caucus  Delegate
+Allocation  Open/
+Closed
+(1,237 Needed to Win) - 2,472 81  17  17  6 4 4 - - -
+Iowa  February 1  30  7 8 7 1 1 3 Caucus  Proportional  Closed
+New Hampshire February 9  23  10  3 3 4 3 0 Primary Proportional* Open**
+South Carolina  February 20 50  50  0 0 0 0 0 Primary Winner Take All∇  Open
+Nevada  February 23 30  14  6 7 1 0 1 Caucus  Proportional  Closed
+Alabama March 1 50              Primary Proportional*#∇ Open
+Alaska  March 1 28              Caucus  Proportional* Closed
+Arkansas  March 1 40              Primary Proportional*#  Open
+Colorado  March 1 37              Caucus  Unbound Closed
+Georgia March 1 76              Primary Proportional*#∇ Open
+Massachusetts March 1 42              Primary Proportional* Open**
+Minnesota March 1 38              Caucus  Proportional*#∇ Open
+Oklahoma  March 1 43              Primary Proportional*#∇ Closed
+Tennessee March 1 58              Primary Proportional*#∇ Open
+Texas March 1 155             Primary Proportional*#∇ Open
+Vermont March 1 16              Primary Proportional*#  Open
+Virginia  March 1 49              Primary Proportional  Open
+Wyoming March 1 29              Convention  Unbound Closed
+Kansas  March 5 40              Caucus  Proportional*∇  Closed
+Kentucky  March 5 45              Caucus  Proportional* Closed
+Louisiana March 5 47              Primary Proportional*∇  Closed
+Maine March 5 23              Caucus  Proportional*#  Closed
+Puerto Rico March 6 23              Primary Proportional*#  Open
+Hawaii  March 8 19              Caucus  Proportional*∇  Closed
+Idaho March 8 32              Primary Proportional*#  Closed
+Michigan  March 8 59              Primary Proportional*#  Closed
+Mississippi March 8 40              Primary Proportional*∇  Open
+Guam  March 12  9             Convention  Unbound Closed
+District of Columbia  March 12  19              Convention  Proportional* Closed
+Florida March 15  99              Primary Winner Take All Closed
+Illinois  March 15  69              Primary Winner Take All∇  Open
+Missouri  March 15  52              Primary Winner Take All∇  Open
+North Carolina  March 15  72              Primary Proportional  Open**
+Northern Marianas March 15  9             Caucus  Winner Take All Closed
+Ohio  March 15  66              Primary Winner Take All Open**
+Virgin Islands  March 19  9             Caucus  Winner Take All Open
+American Samoa  March 22  9             Convention  Unbound Open
+Arizona March 22  58              Primary Winner Take All Open
+Utah  March 22  40              Caucus  Proportional*#  Closed
+North Dakota  April 1 28              Caucus  Unbound Closed
+Wisconsin April 5 42              Primary Winner Take All∇  Open
+New York  April 19  95              Primary Proportional*#∇ Closed
+Connecticut April 26  28              Primary Proportional*#∇ Closed
+Delaware  April 26  16              Primary Winner Take All Closed
+Maryland  April 26  38              Primary Winner Take All∇  Closed
+Pennsylvania  April 26  71              Primary Winner Take All∇  Closed
+Rhode Island  April 26  19              Primary Proportional*∇  Open**
+Indiana May 3 57              Primary Winner Take All∇  Open
+Nebraska  May 10  36              Primary Winner Take All Closed
+West Virginia May 10  34              Primary Direct Election Open**
+Oregon  May 17  28              Primary Proportional  Closed
+Washington  May 24  44              Primary Proportional*∇  Closed
+California  June 7  172             Primary Winner Take All∇  Closed
+Montana June 7  27              Primary Winner Take All Open
+New Jersey  June 7  51              Primary Winner Take All Open**
+New Mexico  June 7  24              Primary Proportional* Closed
+South Dakota  June 7  29              Primary Winner Take All Closed

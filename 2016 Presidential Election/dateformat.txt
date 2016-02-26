@@ -1,0 +1,6 @@
+Month (D)D, YYYY
+Month (D)D, YYYY - Month (D)D
+Month (D)D-(D)D, YYYY
+Month (D)D - Month (D)D, YYYY
+
+[A-Za-z]+ [0-9]+
