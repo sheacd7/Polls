@@ -31,11 +31,16 @@
 #   vals - labels for poll results (list of candidates)
 
 # TODO:
-# handle missing date
-#  [134] Hot Air/Townhall/Survey Monkey
+# reformat dates
+# date filter
+# round decimal percentages to int
 
 # FIXED:
+# remove ',' from numeric values like sample size
+# use other uniq id as ref id since ref is not reliable
+# handle missing poll ref
 # handle multiple [ref_id] per row 
+# remove all refs
 # consolidate 'Others' category
 # zero-pad '%03s' poll ids
 # zero-pad '%02u' and remove spaces from results
@@ -62,6 +67,47 @@ while [[ $# > 0 ]]; do
   shift
 done
 
+ROOTDIR="/cygdrive/c/users/sheacd/GitHub/Polls/2016 Presidential Election/data/"
+
+if [[ -z "${OUT_FILE}" ]]; then
+  temp_name="${IN_FILE##\/}"
+  OUT_FILE="${ROOTDIR}/${temp_name%.*}"
+fi
+#OUT_FILE="${ROOTDIR}/RPN_"
+
+# functions ====================================================================
+function format_poll_info {
+  poll_info="${poll_info%,}"                  # remove trailing ','
+  poll_info="${poll_info//\[[0-9]\{1,3\}\]/}" # remove wiki citations '[ref]'
+  # remove thousand separator
+  x="${poll_info%%[0-9],[0-9][0-9][0-9]*}"
+  if [[ ${#x} -ne ${#poll_info} ]]; then
+    pos1=$(( ${#x} + 1 ))
+    pos2=$(( ${#x} + 2 ))
+    poll_info="${poll_info:0:$pos1}${poll_info:$pos2}"
+  fi
+}
+
+function format_poll_result {
+  poll_result="${poll_result%, }"      # remove trailing ','
+  poll_result="${poll_result//%/}"     # remove '%'
+  poll_result="${poll_result//—/0}"    # replace '—' with '0'
+  poll_result="${poll_result//&lt;/}"  # remove '&lt;'
+  # remove non-numeric chars except comma, semicolon, space
+  poll_result="${poll_result//[^0-9,;\ ]/}"
+  # consolidate 'Others' category results into one numeric value
+  other_results=( ${poll_result##*,} )
+  # sum numeric values
+  sum=0
+  for num in "${other_results[@]}"; do 
+    : $(( sum += $num ))
+  done
+  # replace string value with sum
+  poll_result="${poll_result%,*}, ${sum}"
+  # zero-pad and remove spaces from results
+  printf -v poll_result '%02u,' ${poll_result//,/}
+}
+
 # write array to file as key delim value
 function serialize_array {
   # create local array from keys of passed array name
@@ -71,8 +117,10 @@ function serialize_array {
   for key in "${keys[@]}"; do
     ref=${1}[$key]
     printf '%s\n' "${key}"${delim}"${!ref}"
-  done > "${outfile}"
+  done | sort > "${outfile}"
 }
+
+# main =========================================================================
 
 # first grab each wikitable table into separate array
 echo "Reading from file: ${IN_FILE}"
@@ -94,6 +142,7 @@ declare -A poll_results
 declare -A poll_info_labels
 declare -A poll_result_labels
 
+poll_id_count=0
 # for each set of labels (namely, list of candidates in poll)
 for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
   # hash labels for this group of polls
@@ -112,18 +161,9 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
   # for each poll between label rows
   for ((j=${poll_label_nums[$i]}; j<$((${poll_label_nums[$(($i+1))]} -1)); j++ )); do
     poll_line="${content[$j]}"
-    # extract poll id from first citation reference, eg "[89]"
-    x1="${poll_line%%[*}"
-    pos1=$(( ${#x1} + 1 ))
-    x2="${poll_line%%]*}"
-    pos2=$(( ${#x2} - $pos1 ))
-    poll_id="${poll_line:$pos1:$pos2}"
-    # if no match is found (because this poll has 2 rows of results)
-    if [[ ${#x1} -eq ${#poll_line} ]]; then
-      # set poll id to the previous one concatenated with 'b'
-      poll_id="${poll_ids[@]: -1}"b
-    fi
-    printf -v poll_id '%03s' "$poll_id"
+    : $((poll_id_count++))
+#    # extract poll id from first citation reference, eg "[89]" (replaced)
+    printf -v poll_id '%03u' "$poll_id_count"
     # extract poll info (source, sample size, margin of error, dates admin)
     x="${poll_line%%201[23456],*}"
     pos=$(( ${#x} + 5 ))
@@ -136,35 +176,11 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
       pos=0
     fi
     poll_result="${poll_line:$pos}"
+    format_poll_info
+    format_poll_result
 
-    # remove trailing ','
-    # remove citation num '[[0-9]+]'
-    poll_info="${poll_info%,}"
-    poll_info="${poll_info//\[*\]/}"
     # reformat date to YYYYMMDD or YYYYDDD
     # cross-check with 538 poll ratings
-
-    # remove trailing ','
-    # remove '%'
-    # replace '—' with '0'
-    # replace '&lt;1' with '0'
-    poll_result="${poll_result%, }"
-    poll_result="${poll_result//%/}"
-    poll_result="${poll_result//—/0}"
-    poll_result="${poll_result//&lt;1/0}"
-    # remove non-numeric chars except comma, semicolon, space
-    poll_result="${poll_result//[^0-9,;\ ]/}"
-    # consolidate 'Others' category results into one numeric value
-    other_results=( ${poll_result##*,} )
-    # sum numeric values
-    sum=0
-    for num in "${other_results[@]}"; do 
-      : $(( sum += $num ))
-    done
-    # replace string value with sum
-    poll_result="${poll_result%,*}, ${sum}"
-    # zero-pad '%02s' and remove spaces from results
-    printf -v poll_result '%02u,' ${poll_result//,/}
 
     # add each value to corresponding array
     poll_groups[${poll_group}]="${poll_groups[$poll_group]}, ${poll_id}"
@@ -179,7 +195,6 @@ for group in "${!poll_groups[@]}"; do
   poll_groups[$group]="${poll_groups[$group]#, }"
 done
 
-OUT_FILE="/cygdrive/c/users/sheacd/GitHub/Polls/2016 Presidential Election/data/R_Primary_National_"
 
 # write (serialize) each array to file =========================================
 
@@ -213,3 +228,20 @@ serialize_array poll_results ';' "${OUT_FILE}_poll_results.csv"
 #   printf '%s\n' "${key};${poll_results[$key]}"
 # done > "${OUT_FILE}_poll_results.csv"
 
+#    # extract poll id from first citation reference, eg "[89]"
+#    x1="${poll_line%%[*}"
+#    pos1=$(( ${#x1} + 1 ))
+#    x2="${poll_line%%]*}"
+#    pos2=$(( ${#x2} - $pos1 ))
+#    poll_id="${poll_line:$pos1:$pos2}"
+#    # if no match is found 
+#    #   this poll has 2 rows of results or
+#    #   this poll has no poll_id from wiki reference
+#    if [[ ${#x1} -eq ${#poll_line} ]]; then
+#      # set poll id to the previous one concatenated with 'b'
+#      if [[ "${poll_ids[@]: -2:1}b" == "${poll_ids[@]: -1:1}" ]]; then 
+#        poll_id="$(( ${poll_ids[@]: -2:1} + 1 ))"
+#      else
+#        poll_id="${poll_ids[@]: -1:1}"b
+#      fi
+#    fi
