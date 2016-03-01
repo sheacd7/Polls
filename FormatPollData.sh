@@ -16,7 +16,7 @@
 
 # poll_infos
 #   keys - poll id
-#   vals - info (source, sample size, margin of error, dates administered)
+#   vals - info (end date, start date, source, sample size, margin of error)
 
 # poll_results
 #   keys - poll id
@@ -31,11 +31,12 @@
 #   vals - labels for poll results (list of candidates)
 
 # TODO:
-# reformat dates
+# handle missing date (DPN 004)
 # date filter
 # round decimal percentages to int
 
 # FIXED:
+# reformat dates
 # remove ',' from numeric values like sample size
 # use other uniq id as ref id since ref is not reliable
 # handle missing poll ref
@@ -78,7 +79,8 @@ fi
 # functions ====================================================================
 function format_poll_info {
   poll_info="${poll_info%,}"                  # remove trailing ','
-  poll_info="${poll_info//\[[0-9]\{1,3\}\]/}" # remove wiki citations '[ref]'
+  poll_info="${poll_info//\[[[:digit:]]*\]/}" # remove wiki citations '[ref]'
+#  poll_info="${poll_info##[\s]+}"               # remove leading whitespace
   # remove thousand separator
   x="${poll_info%%[0-9],[0-9][0-9][0-9]*}"
   if [[ ${#x} -ne ${#poll_info} ]]; then
@@ -106,6 +108,52 @@ function format_poll_result {
   poll_result="${poll_result%,*}, ${sum}"
   # zero-pad and remove spaces from results
   printf -v poll_result '%02u,' ${poll_result//,/}
+}
+
+function format_poll_date {
+  # remove non-date characters
+  poll_date="${poll_date//–/ }" # en dash
+  poll_date="${poll_date//-/ }" # 
+  poll_date="${poll_date//,/}"
+  # date element regexes
+  month_re='[A-Z][a-z]+'
+  year_re='20[012][0-9]'
+  day_re='^[0-9]{1,2}$'
+  months=()
+  years=()
+  days=()
+  # check each word for match and add to appropriate date element array
+  for str in ${poll_date}; do 
+    [[ "${str}" =~ ${month_re} ]] && months+=( ${BASH_REMATCH[0]} )
+    [[ "${str}" =~ ${year_re} ]] && years+=( ${BASH_REMATCH[0]} )    
+    [[ "${str}" =~ ${day_re} ]] && days+=( ${BASH_REMATCH[0]} )
+  done
+  # convert month names to MM
+  month_to_mm "${months[0]}" "month0"
+  month_to_mm "${months[-1]}" "month1"
+  # compose start and end dates
+  printf -v start_date '%04u-%02u-%02u' "${years[0]}" "${month0}" "${days[0]}"
+  printf -v end_date '%04u-%02u-%02u' "${years[-1]}" "${month1}" "${days[-1]}"
+}
+
+# convert Month names to MM, eg "January" -> "1", "December" -> "12"
+function month_to_mm {
+  case "$1" in 
+    Jan*)  MM=1 ;;
+    Feb*)  MM=2 ;;
+    Mar*)  MM=3 ;;
+    Apr*)  MM=4 ;;
+    May)   MM=5 ;;
+    Jun*)  MM=6 ;;
+    Jul*)  MM=7 ;;
+    Aug*)  MM=8 ;;
+    Sep*)  MM=9 ;;
+    Oct*)  MM=10 ;;
+    Nov*)  MM=11 ;;
+    Dec*)  MM=12 ;;
+    *) echo "Invalid month: $1"; MM=0 ;;
+  esac
+  printf -v "$2" '%u' ${MM}
 }
 
 # write array to file as key delim value
@@ -174,9 +222,18 @@ for ((i=0; i<$(( ${#poll_label_nums[@]} - 1 )); i++)); do
       poll_info="${poll_infos[${poll_ids[@]: -1}]}"
       # set substring position to 0 because the entire line is a set of results
       pos=0
+    else
+      format_poll_info
+      y="${poll_info%%, [A-Z]*}"
+      dpos=$(( ${#y} + 2 ))
+      poll_date="${poll_info:$dpos}"
+      poll_info="${poll_info:0:${#y}}"
+      format_poll_date
+#      poll_info=" ${end_date}, ${start_date}, ${poll_info}"
+      poll_info="${poll_info}, ${end_date}, ${start_date}"
     fi
+
     poll_result="${poll_line:$pos}"
-    format_poll_info
     format_poll_result
 
     # reformat date to YYYYMMDD or YYYYDDD
