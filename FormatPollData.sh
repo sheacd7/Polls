@@ -33,7 +33,6 @@
 # TODO:
 # handle missing date (DPN 004)
 # date filter
-# round decimal percentages to int
 
 # FIXED:
 # reformat dates
@@ -43,6 +42,7 @@
 # handle multiple [ref_id] per row 
 # remove all refs
 # consolidate 'Others' category
+# round decimal percentages to int
 # zero-pad '%03s' poll ids
 # zero-pad '%02u' and remove spaces from results
 
@@ -96,18 +96,19 @@ function format_poll_result {
   poll_result="${poll_result//—/0}"    # replace '—' with '0'
   poll_result="${poll_result//&lt;/}"  # remove '&lt;'
   # remove non-numeric chars except comma, semicolon, space
-  poll_result="${poll_result//[^0-9,;\ ]/}"
+  poll_result="${poll_result//[^0-9,;\. ]/}"
   # consolidate 'Others' category results into one numeric value
   other_results=( ${poll_result##*,} )
+  printf -v other_result '%.0f ' ${other_results[@]}
   # sum numeric values
   sum=0
-  for num in "${other_results[@]}"; do 
+  for num in ${other_result[@]}; do 
     : $(( sum += $num ))
   done
   # replace string value with sum
   poll_result="${poll_result%,*}, ${sum}"
   # zero-pad and remove spaces from results
-  printf -v poll_result '%02u,' ${poll_result//,/}
+  printf -v poll_result '%02.0f,' ${poll_result//,/}
 }
 
 function format_poll_date {
